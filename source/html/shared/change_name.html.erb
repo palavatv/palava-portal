@@ -1,0 +1,9 @@
+---
+layout: false
+---
+<div ng-init="newName = peer.status.name" id="change-name-popover" class="input-append">
+  <form>
+    <input type="text" maxlength="50" ng-model="newName" class="input-medium" autofocus />
+    <button ng-click="peer.updateStatus({name: newName}); hide()" class="btn btn-primary">Change</button>
+  </form>
+</div>

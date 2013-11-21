@@ -1,0 +1,28 @@
+<div class="container">
+  <div id="feedback">
+    <div class="confirmed-thank-you hide">
+      <h1>Thank you for signing up!</h1>
+      <p>
+        You have been signed up successfully! Do you also want to leave us a short note?
+      </p>
+    </div>
+
+    <div class="unsubscribed-thank-you hide">
+      <h1>We have unsubscribed you.</h1>
+      <p>
+        We're sorry to see you go. Please take a minute and tell us why!
+      </p>
+    </div>
+
+    <h1 id="feedback-heading">Feedback</h1>
+    <div class="feedback-thank-you hide">
+      <p>
+        Thank you, we appreciate it!
+      </p>
+    </div>
+    <form class="feedback-form" ng-submit="submitFeedback()">
+      <textarea placeholder="Questions? Suggestions? Opinions? Please let us know!" name="feedback"></textarea>
+      <button type="submit" class="btn btn-primary focus" id="submit-feedback">Send</button>
+    </form>
+  </div>
+</div>

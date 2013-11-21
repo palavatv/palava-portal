@@ -1,0 +1,50 @@
+#how-it-works, #contact, #feedback, #ev {
+  margin-right: 0px;
+  padding: 0px 10px;
+  p {
+    color: $font-color;
+    margin-bottom: 10px;
+  }
+  address {
+    margin-bottom: 0px;
+  }
+
+  .feedback-form {
+    // text-align: right;
+    textarea {
+      display: block;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 200px;
+      background: #f9f9f9;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 0px;
+    }
+    button {
+      width: 20%;
+    }
+  }
+
+  .feedback-heading {
+    border-bottom: 0px;
+  }
+
+  .activity-area {
+    h3 {
+      font-size: 14px;
+      margin: 0px;
+    }
+    display: inline-block;
+    margin-right: 23px;
+    width: 200px;
+    vertical-align: top;
+  }
+}
+
+#ev, #how-it-works {
+  margin-top: 35px;
+}

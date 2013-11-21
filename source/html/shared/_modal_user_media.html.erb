@@ -1,0 +1,27 @@
+<div class="modal hide fade modal-center" id="modal-user-media" data-backdrop="static" data-keyboard="false">
+  <div class="modal-header">
+    <h3>Access to your <span ng-bind="userMediaTitles"></span></a></h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      Your browser will be asking you for access to your computers' media sources. This might take some seconds. Also make sure that your camera is turned on! After granting these permission, this message will automatically go away and you will be added to the video conference!
+    </p>
+
+    <p>
+      This is how it looks like in Chrome 26. Press Allow to continue:
+    </p>
+    <%= image_tag('chrome-26-hint.png') %>
+
+    <div class="alert hide">
+      <p>
+        You have to allow access to your microphone or<br/>webcam to be able to join the conference!
+      </p>
+      <p>
+        This error might be caused by other programs that are currently using your camera. If you have previously denied this access, you will have to explicitly allow media access in your browser settings (in Chrome, this can be done by clicking on the small camera in your address bar).
+      </p>
+      <p>
+        <a href="javascript:window.location.reload()">Please reload to try again!</a>
+      </p>
+    </div>
+  </div>
+</div>

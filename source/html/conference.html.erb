@@ -1,0 +1,58 @@
+---
+layout: slim
+---
+
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-inner conference-nav">
+    <p id="palava-alert" class="alert hide">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <span class="alert-content"></span>
+    </p>
+
+    <p id="share-link-text" class="pull-right">
+      <strong>copy and share this link to invite people to the conference </strong>
+      <span id="share-link" tabindex="0" ng-click="$event.target.select()"><%= settings.palava_domain %>/{{encodedRoomId}}</span>
+    </p>
+
+    <div class="navbar-header">
+      <a href="/{{encodedRoomId}}" class="{{roomClasses}}">{{readableRoomId}}</a>
+    </div>
+  </div>
+</nav>
+
+<div id="conference" class="container-fluid" ng-controller="PalavaController">
+  <div class="row-fluid row">
+
+    <div class="span-fixed-sidebar plv-stage-container">
+      <div class="row-fluid">
+        <div class="stage plv-stage">
+          <div ng-show="state.peerOnStage"><webrtc-stream></webrtc-stream></div>
+          <div id="plv-stage-placeholder" ng-hide="state.peerOnStage">
+            You are all set! You can now:
+            <ul>
+              <li>share the link to this conference</li>
+              <li>click on a small video to make it big</li>
+              <li>double click on a video to set it to fullscreen mode</li>
+              <li>subscribe to our <a href="javascript:void(0)" class="subscribe">Newsletter</a> while you are waiting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="plv-video-bar">
+      <aside class="well sidebar-nav-fixed">
+        <ul class="nav plv-participants">
+          <li palava-peer class="plv-video-wrapper" ng-repeat="peer in rtc.room.getAllPeers() | orderBy: 'joinTime'" data-peer-id="{{peer.id}}" ng-class="{'plv-active-video-wrapper': peer == state.peerOnStage }">
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <%= partial "html/shared/modal_user_media" %>
+  <%= partial "html/shared/modal_user_media_configurator" %>
+  <%= partial "html/shared/modal_maintenance" %>
+</div>
+
+<%= partial "html/shared/footer" %>

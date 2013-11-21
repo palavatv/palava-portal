@@ -1,0 +1,161 @@
+#= require app/app
+#= require palava/coffee/main
+
+@palavaPortal.controller('PalavaController', ['$scope', '$location', ($scope, $location) ->
+  ## private functions ##
+  setupState = ->
+    $scope.state =
+      uiState: "user_media_configurator"
+      peerOnStage: null
+
+  setupChannel = ->
+    $scope.channel = new palava.WebSocketChannel('<%= ENV['PALAVA_RTC_ADDRESS'] || "ws:localhost:4233" %>')
+
+  getUserMediaTitles = (userMediaConfig) ->
+    if userMediaConfig.audio && !userMediaConfig.video
+      'Microphone'
+    else if !userMediaConfig.audio && userMediaConfig.video
+      'Webcam'
+    else if !userMediaConfig.audio && !userMediaConfig.video
+      'Nothing'
+    else
+      'Webcam and Microphone'
+
+  checkStage = ->
+    remotes = rtc.room && rtc.room.getRemotePeers()
+    if !remotes || $scope.state.peerOnStage && $scope.state.peerOnStage.id == $scope.rtc.room.getLocalPeer().id
+      # nothing
+    else if remotes.length == 0
+      $scope.setPeerOnStage null
+    else if remotes.length >= 1 && !$scope.state.peerOnStage
+      $scope.setPeerOnStage remotes[0]
+
+  ## public functions ##
+  $scope.setPeerOnStage = (peer) ->
+    if !peer || !peer.getStream()
+      # $scope.log('removing peer from stage', peer)
+      $scope.state.peerOnStage = null
+    else if $scope.state.peerOnStage != peer
+      # $scope.log('setting peer on stage', peer)
+      $scope.state.peerOnStage = peer
+      palava.browser.attachMediaStream($('.plv-stage video'), peer.getStream())
+      palava.browser.fixAudio $('.plv-video-wrapper[data-peer-id=' + peer.id + ']')
+      $scope.$apply() unless $scope.$$phase # ...
+
+  $scope.applyMuteStatuses = -> # chrome workaround :(
+    $('.plv-video-wrapper video').prop 'muted', true
+    $('.plv-video-wrapper [data-peer-muted=false]~video').prop 'muted', false
+
+  $scope.initConference = (userMediaConfig) ->
+    $scope.userMediaTitles = getUserMediaTitles(userMediaConfig)
+    $scope.state.uiState = 'waiting_for_user_media'
+    $('#share-link').focus()
+
+    $scope.rtc.init
+      identity: new palava.Identity
+        userMediaConfig: userMediaConfig
+      options:
+        stun: '<%= ENV['PALAVA_STUN_ADDRESS'] || "stun:93.186.193.18" %>'
+        joinTimeout: 500
+
+  ## watchers ##
+  $scope.$watch 'state.uiState', (newVal) ->
+    switch newVal
+      when 'user_media_configurator'
+        $('.modal').modal 'hide'
+        $('#modal-user-media-configurator').modal 'show'
+      when 'waiting_for_user_media'
+        $('.modal').modal 'hide'
+        $('#modal-user-media').modal 'show'
+      when 'user_media_error'
+        $('.modal').modal 'hide'
+        $('#modal-user-media .alert').show()
+      when 'maintenance'
+        $('.modal').modal 'hide'
+        $('#modal-maintenance').modal 'show'
+      when 'conference'
+        $('.modal').modal 'hide'
+        $('.modal-backdrop').hide()
+
+  ## destructors ##
+  $scope.$on '$destroy', ->
+    if $scope.rtc
+      $scope.rtc.destroy()
+
+  ## init ##
+  if $scope.forceSupport == false
+    $scope.goHome()
+  else
+    setupState()
+    setupChannel()
+
+    rtc = new palava.Session
+      roomId: $scope.roomId   # inherited from ConferenceController
+      channel: $scope.channel # could also be inherited
+
+    rtc.on 'argument_error', (e) ->
+      $scope.log_error 'internal error', e
+
+    rtc.on 'webrtc_no_support', ->
+      $scope.log_error 'webrtc not supported'
+      $scope.goHome() unless $scope.forceSupport
+
+    rtc.on 'webrtc_partial_support', ->
+      $scope.log_warning 'webrtc only partially supported!'
+      $scope.palavaAlert('<strong>Warning:</strong> Your browser is not fully supported. See <a href="/info/how">How it Works</a> for more informations. Please update or use another browser to avoid compability issues!')
+
+    rtc.on 'signaling_not_reachable', ->
+      $scope.log_error 'signaling server not reachable'
+      $scope.palavaAlert 'Unfortunately, the palava rtc server seems to be down! Please try again later!'
+    rtc.on 'signaling_error', (error) ->
+      $scope.log_error 'signaling error', error
+    rtc.on 'signaling_shutdown', (seconds) ->
+      $scope.log_warning "Sorry, your connection will be reset in " + seconds + " seconds!"
+      $scope.state.uiState = 'maintenance'
+      $scope.$apply()
+
+    rtc.on 'room_join_error', =>
+      $scope.log_error 'room not joinable'
+      $scope.palavaAlert 'Unfortunately, the palava rtc server seems to be down! Please try again later!' # TODO modal
+    rtc.on 'room_full', ->
+      $scope.palavaAlert('Sorry, the conference room <strong>' + roomId + '</strong> is full! Please <a href="javascript:window.location.reload()">try again</a> or go back to the <a href="/#/">homepage</a>!') # TODO oo
+    rtc.on 'room_joined', (room) ->
+      $scope.log 'room joined with ' + (room.getRemotePeers().length) + ' peers'
+
+    rtc.on 'local_stream_ready', (stream) ->
+      $scope.log 'local stream ready', stream
+      $scope.state.uiState = 'conference'
+      rtc.room.join()
+      $scope.$apply()
+    rtc.on 'local_stream_error', (error) ->
+      $scope.log 'local stream error'
+      $scope.state.uiState = 'user_media_error'
+      $scope.$apply()
+
+    rtc.on "peer_joined", (peer) ->
+      $scope.log 'peer joined', peer
+    rtc.on "peer_stream_ready", (peer) ->
+      $scope.log 'peer stream ready', peer
+      checkStage()
+      $scope.$apply()
+
+    rtc.on "peer_update", (peer) ->
+      $scope.log 'peer updated status', peer
+      $scope.$apply()
+    rtc.on "peer_stream_removed", (peer) ->
+      $scope.log 'peer stream removed', peer
+      checkStage()
+      $scope.$apply() unless $scope.$$phase
+    rtc.on "peer_left", (peer) ->
+      $scope.log 'peer left', peer
+      setTimeout ( -> $scope.$apply() ), 1
+
+    rtc.on "session_before_destroy", ->
+      $scope.log 'destroying rtc session'
+
+    rtc.on "session_after_destroy", ->
+      $('.modal').modal 'hide'
+      $('.modal-backdrop').hide()
+
+    $scope.rtc = rtc
+])
