@@ -10,6 +10,13 @@ The palava portal is the single-page web application that runs [palava.tv](https
 
 ## Setup
 
+Clone this directory and checkout the submodule:
+
+    $ git clone https://github.com/palavatv/palava-portal
+    $ cd palava-portal
+    $ git submodule init
+    $ git submodule update
+
 Make sure you have Ruby installed. Clone this repo and in the directory run:
 
     $ bundle install
