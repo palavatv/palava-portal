@@ -146,6 +146,7 @@
       $scope.$apply() unless $scope.$$phase
     rtc.on "peer_left", (peer) ->
       $scope.log 'peer left', peer
+      checkStage()
       setTimeout ( -> $scope.$apply() ), 1
 
     rtc.on "session_before_destroy", ->

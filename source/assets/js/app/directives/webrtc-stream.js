@@ -11,7 +11,7 @@ angular.module('palava-portal').directive('webrtcStream', function(){
           if(val) {
             palava.browser.attachMediaStream($elem, val.getStream());
           } else {
-            // TODO: remove current stream
+            palava.browser.attachMediaStream($elem, null);
           }
         });
       },
