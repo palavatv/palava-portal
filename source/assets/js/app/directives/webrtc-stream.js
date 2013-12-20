@@ -3,14 +3,18 @@ angular.module('palava-portal').directive('webrtcStream', function(){
       restrict: 'E',
       replace: true,
       scope: {
-        source: "="
+        peer: "=",
       },
       link: function($scope, $elem, $attrs){
         palava.browser.registerFullscreen($elem, 'dblclick');
-        $scope.$watch('source', function(val){
-          palava.browser.attachMediaStream($elem, val);
+        $scope.$watch('peer', function(val){
+          if(val) {
+            palava.browser.attachMediaStream($elem, val.getStream());
+          } else {
+            // TODO: remove current stream
+          }
         });
       },
-      template: '<video autoplay muted class="plv-video-like" />'
+      template: '<video autoplay muted class="plv-video-like" ng-class="{\'plv-local-video\': peer.isLocal() }" />'
     };
 });

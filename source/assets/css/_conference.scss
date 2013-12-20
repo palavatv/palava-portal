@@ -217,3 +217,15 @@ ul.user-media-buttons {
         opacity: 0.8;
     }
 }
+
+@mixin transform($transformation) {
+  -webkit-transform: $transformation;
+     -moz-transform: $transformation;
+      -ms-transform: $transformation;
+       -o-transform: $transformation;
+          transform: $transformation;
+}
+
+.plv-local-video {
+    @include transform(scaleX(-1));
+}

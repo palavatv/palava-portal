@@ -17,7 +17,7 @@ var templateString = '\
 </span>\
 \
 <div ng-hide="peer.isReady()" class="plv-video-like"></div>\
-<webrtc-stream ng-if="peer.isReady()" source="peer.getStream()" poster="/assets/images/poster.png"></webrtc-stream>\
+<webrtc-stream ng-if="peer.isReady()" peer="peer" poster="/assets/images/poster.png"></webrtc-stream>\
 '
 
 angular.module('palava-portal').directive('palavaPeer', [function(){

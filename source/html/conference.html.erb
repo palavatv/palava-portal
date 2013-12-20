@@ -26,7 +26,7 @@ layout: slim
     <div class="span-fixed-sidebar plv-stage-container">
       <div class="row-fluid">
         <div class="stage plv-stage">
-          <div ng-show="state.peerOnStage"><webrtc-stream></webrtc-stream></div>
+          <div ng-show="state.peerOnStage"><webrtc-stream peer="state.peerOnStage"></webrtc-stream></div>
           <div id="plv-stage-placeholder" ng-hide="state.peerOnStage">
             You are all set! You can now:
             <ul>
