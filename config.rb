@@ -33,7 +33,7 @@ end
 # angular html5 routing
 require 'rack/rewrite'
 use Rack::Rewrite do
-  rewrite %r{^\/(?!(html|assets|plv|favicon.ico)/)(.+)$}, '/index.html'
+  rewrite %r{^\/(?!(html|assets|plv|favicon\.ico|robots\.txt|humans\.txt))(.+)$}, '/index.html'
 end
 
 
