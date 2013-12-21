@@ -37,7 +37,7 @@ You can set the addresses of the rtc and stun server via environment variables. 
 
     $ export PALAVA_RTC_ADDRESS="ws:some_ip[:some_port]"
     $ export PALAVA_STUN_ADDRESS="stun:some_ip[:some_port]"
-    $ export PALAVA_BASE_ADDRESS="http://your.domain.com"
+    $ export PALAVA_BASE_ADDRESS="https://your.domain.com"
     $ middleman
 
 ## Credits
