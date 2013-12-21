@@ -69,12 +69,14 @@ nav {
     }
 
     .plv-stage {
-        margin: 15px;
         video {
-            width: 100%;
-            height: auto;
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: 100%;
             max-height: 100%;
-            box-shadow: 0px 0px 2px #aaa;
+            // TODO
+            //box-shadow: 0px 0px 2px #aaa;
         }
     }
 
