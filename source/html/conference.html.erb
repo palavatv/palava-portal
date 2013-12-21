@@ -11,7 +11,7 @@ layout: slim
 
     <p id="share-link-text" class="pull-right">
       <strong>copy and share this link to invite people to the conference </strong>
-      <span id="share-link" tabindex="0" ng-click="$event.target.select()"><%= settings.palava_domain %>/{{encodedRoomId}}</span>
+      <span id="share-link" tabindex="0" ng-click="$event.target.select()"><%= ENV['PALAVA_BASE_ADDRESS'] || settings.palava_domain %>/{{encodedRoomId}}</span>
     </p>
 
     <div class="navbar-header">
