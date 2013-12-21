@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
-
 gem 'middleman', '~> 3.2.0'
 gem 'middleman-bower'
 gem 'uglifier'
