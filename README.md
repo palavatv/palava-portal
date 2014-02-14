@@ -35,12 +35,18 @@ You can build a static version of the page using:
 
 ### Configure using Environment Variables
 
+
+#### Option 1: via env variables
 You can set the addresses of the rtc and stun server via environment variables. The defaults are a local rtc server 'ws:localhost:4233' and the palava stun server 'stun:stun.palava.tv'. Use `ws:` for unsecured and `wss:` for ssl secured websocket connections.
 
     $ export PALAVA_RTC_ADDRESS="ws:some_ip:some_port"
     $ export PALAVA_STUN_ADDRESS="stun:some_ip:some_port"
     $ export PALAVA_BASE_ADDRESS="https://your.domain.com"
     $ middleman
+
+#### Option 2: via .env file
+
+Modify the options in the ``.env`` file. Environmental Variables (Option 1) will have precedence.
 
 ## Credits
 

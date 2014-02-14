@@ -9,6 +9,7 @@ gem 'therubyracer'
 gem 'oj'
 gem 'rack-rewrite'
 gem 'whiskey_disk'
+gem 'dotenv'
 
 group :development do
   gem 'debugger'
