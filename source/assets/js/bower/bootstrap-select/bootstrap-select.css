@@ -1,12 +1,12 @@
 /*!
- * bootstrap-select v1.3.3
+ * bootstrap-select v1.5.2
  * http://silviomoreto.github.io/bootstrap-select/
  *
  * Copyright 2013 bootstrap-select
  * Licensed under the MIT license
  */
 
-.bootstrap-select.btn-group,
+.bootstrap-select.btn-group:not(.input-group-btn),
 .bootstrap-select.btn-group[class*="span"] {
     float: none;
     display: inline-block;
@@ -17,6 +17,12 @@
 .form-inline .bootstrap-select.btn-group,
 .form-horizontal .bootstrap-select.btn-group {
     margin-bottom: 0;
+}
+
+.bootstrap-select.form-control {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
 }
 
 .bootstrap-select.btn-group.pull-right,
@@ -33,7 +39,7 @@
     margin-right: -1px;
 }
 
-.bootstrap-select:not([class*="span"]) {
+.bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 220px;
 }
 
@@ -42,17 +48,17 @@
     width: 220px\0; /*IE9 and below*/
 }
 
+.bootstrap-select.form-control:not([class*="span"]) {
+    width: 100%;
+}
+
 .bootstrap-select > .btn {
     width: 100%;
+    padding-right: 25px;
 }
 
 .error .bootstrap-select .btn {
     border: 1px solid #b94a48;
-}
-
-
-.dropdown-menu {
-  z-index: 2000;
 }
 
 .bootstrap-select.show-menu-arrow.open > .btn {
@@ -66,10 +72,10 @@
 }
 
 .bootstrap-select.btn-group .btn .filter-option {
+    display: inline-block;
     overflow: hidden;
-    position: absolute;
-    left: 12px;
-    right: 25px;
+    width: 100%;
+    float: left;
     text-align: left;
 }
 
@@ -96,9 +102,10 @@
 
 .bootstrap-select.btn-group .dropdown-menu {
     min-width: 100%;
-    -moz-box-sizing: border-box;
+    z-index: 2000;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .bootstrap-select.btn-group .dropdown-menu.inner {
@@ -142,8 +149,8 @@
 }
 
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a i.check-mark {
-    display: inline-block;
     position: absolute;
+    display: inline-block;
     right: 15px;
     margin-top: 2.5px;
 }
@@ -161,7 +168,8 @@
 }
 
 .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small,
-.bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:focus small {
+.bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:focus small,
+.bootstrap-select.btn-group .dropdown-menu li.active:not(.disabled) > a small {
     color: #64b1d8;
     color: rgba(255,255,255,0.4);
 }
@@ -196,18 +204,18 @@
 }
 
 .bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:before {
-  bottom: auto;
-  top: -3px;
-  border-top: 7px solid #ccc;
-  border-bottom: 0;
-  border-top-color: rgba(0, 0, 0, 0.2);
+    bottom: auto;
+    top: -3px;
+    border-top: 7px solid #ccc;
+    border-bottom: 0;
+    border-top-color: rgba(0, 0, 0, 0.2);
 }
 
 .bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:after {
-  bottom: auto;
-  top: -3px;
-  border-top: 6px solid #ffffff;
-  border-bottom: 0;
+    bottom: auto;
+    top: -3px;
+    border-top: 6px solid #ffffff;
+    border-bottom: 0;
 }
 
 .bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:before {
@@ -222,6 +230,29 @@
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle:before,
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle:after {
     display: block;
+}
+
+.bootstrap-select.btn-group .no-results {
+    padding: 3px;
+    background: #f5f5f5;
+    margin: 0 5px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu .notify {
+    position: absolute;
+    bottom: 5px;
+    width: 96%;
+    margin: 0 2%;
+    min-height: 26px;
+    padding: 3px 5px;
+    background: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    pointer-events: none;
+    opacity: 0.9;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .mobile-device {
@@ -252,6 +283,27 @@
     border-color: #b94a48;
 }
 
-.bootstrap-select-searchbox {
+.bootstrap-select-searchbox,
+.bootstrap-select .bs-actionsbox {
     padding: 4px 8px;
+}
+
+.bootstrap-select .bs-actionsbox {
+    float: left;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.bootstrap-select-searchbox + .bs-actionsbox {
+    padding: 0 8px 4px;
+}
+
+.bootstrap-select-searchbox input {
+    margin-bottom: 0;
+}
+
+.bootstrap-select .bs-actionsbox .btn-group button {
+    width: 50%;
 }

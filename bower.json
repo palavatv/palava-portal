@@ -1,0 +1,27 @@
+{
+  "name": "palava-portal",
+  "version": "0.0.0",
+  "homepage": "https://github.com/palavatv/palava-portal",
+  "authors": [
+    "Peter Brändel <peter@bitbites.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/assets/js/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-strap": "~2.0",
+    "angular": "~1.2.8",
+    "bootstrap": ">=3.0 <4.0",
+    "eventEmitter": "~4.2.4",
+    "jquery": "~2.0.3",
+    "angular-animate": "~1.2.14",
+    "angular-route": "~1.2.14"
+  }
+}

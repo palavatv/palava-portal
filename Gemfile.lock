@@ -105,7 +105,7 @@ DEPENDENCIES
   middleman-bower
   oj
   rack-rewrite
-  rb-inotify (~> 0.9.2)
+  rb-fsevent
   sass
   therubyracer
   uglifier

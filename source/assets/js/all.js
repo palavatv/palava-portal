@@ -1,7 +1,9 @@
 //= require      jquery/jquery
 //= require      angular/angular
-//= require      bootstrap/docs/assets/js/bootstrap
-//= require      angular-strap/dist/angular-strap
+//= require      angular-animate
+//= require      angular-route
+//= require      bootstrap
+//= require      angular-strap
 //= require_tree ./lib
 //= require_tree ./app
 //= require      ./_ready
