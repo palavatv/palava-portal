@@ -8,7 +8,7 @@ The palava portal is the single-page web application that runs [palava.tv](https
 - [AngularJS](http://angularjs.org/)
 - [Twitter Bootstrap](http://getbootstrap.com/)
 
-See [our blog post](https://blog.palava.tv/2013/12/How_to_host_your_own_WebRTC_Video_Conferencing_on_ubuntu/) for detailed instructios on how to setup the portal together with the [machine](https://github.com/palavatv/palava-machine) on an ubuntu.
+See [our blog post](https://blog.palava.tv/2013/12/How_to_host_your_own_WebRTC_Video_Conferencing_on_ubuntu/) for detailed instructions on how to setup the portal together with the [machine](https://github.com/palavatv/palava-machine) on an ubuntu.
 
 ## Portal Setup
 
