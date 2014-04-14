@@ -7,7 +7,7 @@ layout: slim
     <div class="content container">
       <%= image_tag 'palava.png', alt: 'palava.tv' %>
       <p class="tagline"><strong>browser-to-browser video</strong></p>
-      <form class="join-room">
+      <form class="join-room form-inline">
         <div class="hide subscribe-info">
           <p><strong>Thank you</strong> for being interested in palava. Please enter your email address to receive the latest news on palava and WebRTC!</p>
         </div>
@@ -16,12 +16,12 @@ layout: slim
           <%= partial 'html/shared/support_list' %>
         </div>
         <div class="join-room-fields">
-          <div class="input-append">
-            <input type="text" maxlength="50" name="room_id" id="room_id" class="input-large room-id" placeholder="Conference Name" />
-            <button class="btn btn-primary btn-go">▸</button>
+          <div class="form-group">
+            <input type="text" maxlength="50" name="room_id" id="room_id" class="input-lg room-id" placeholder="Conference Name" />
+            <button class="btn btn-lg btn-primary btn-go">▸</button>
           </div>
           <span class="button-separator">or</span>
-          <button class="btn btn-warning btn-private">Private</button>
+          <button class="btn btn-warning btn-private btn-lg">Private</button>
         </div>
         <div class="hide partialsupport">
           <p><strong>Warning:</strong> Your web browser is not fully compatible with the latest technologies for video communication on the web. You will not be able to communicate with users using Firefox. For full support please use one of the following browsers:

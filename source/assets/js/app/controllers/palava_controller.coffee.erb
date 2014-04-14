@@ -60,6 +60,7 @@
   $scope.$watch 'state.uiState', (newVal) ->
     switch newVal
       when 'user_media_configurator'
+        console.log "DEBUG:    " + newVal
         $('.modal').modal 'hide'
         $('#modal-user-media-configurator').modal 'show'
       when 'waiting_for_user_media'
