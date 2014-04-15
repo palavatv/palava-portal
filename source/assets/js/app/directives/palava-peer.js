@@ -11,7 +11,13 @@ var templateString = '\
 \
 <span ng-show="peer.isLocal()" class="plv-video-heading">\
   {{peer.status.name || "You"}}\
-  <a href="javascript:void(0)" class="plv-change-name" data-title="Change your Display Name" data-placement="bottom" bs-popover="\'html/shared/change_name.html\'">\
+  <a  href            = "javascript:void(0)"\
+      class           = "plv-change-name ng-scope"\
+      bs-popover      = ""\
+      data-title      = "Change your Display Name"\
+      data-placement  = "bottom"\
+      data-template   = "html/shared/change_name.html"\
+      data-content    = "SHOOT!">\
     Options\
   </a>\
 </span>\
