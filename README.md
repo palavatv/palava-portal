@@ -29,6 +29,8 @@ Start the middleman development server on http://localhost:4567
 
     $ middleman
 
+In case '$ middleman' leads to errors due to some missing components, try running '$ bundle update' and then re-run middleman. 
+
 You can build a static version of the page using:
 
     $ middleman build
