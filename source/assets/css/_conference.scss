@@ -75,6 +75,7 @@ nav {
             min-height: 100%;
             max-width: 100%;
             max-height: 100%;
+            margin-left: 10px;
             // TODO
             //box-shadow: 0px 0px 2px #aaa;
         }
@@ -130,6 +131,7 @@ nav {
 
         .plv-participants {
             padding-bottom: $footer-height;
+            margin-left: 10px;
         }
 
         .plv-active-video-wrapper {
