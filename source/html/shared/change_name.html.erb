@@ -1,9 +1,27 @@
 ---
 layout: false
 ---
-<div ng-init="newName = peer.status.name" id="change-name-popover" class="input-append">
-  <form>
-    <input type="text" maxlength="50" ng-model="newName" class="input-medium" autofocus />
-    <button ng-click="peer.updateStatus({name: newName}); hide()" class="btn btn-primary">Change</button>
-  </form>
+<div  ng-init   = "newName = peer.status.name"
+      class     = "popover"
+      tabindex  = "-1"
+      ng-show   = "content">
+  <div  class         = "arrow"></div>
+  <h3   class         = "popover-title"
+        ng-bind-html  = "title"
+        ng-show       = "title"></h3>
+  <div  class         = "popover-content">
+    <form class       = "input-group">
+      <input  type      = "text"
+              maxlength = "50"
+              ng-model  = "newName"
+              class     = "input-medium form-control"
+              autofocus />
+      <span   class     = "input-group-btn">
+        <button ng-click  = "peer.updateStatus({name: newName}); hide()"
+                class     = "btn btn-primary">
+          Change
+        </button>
+      </span>
+    </form>
+  </div>
 </div>
