@@ -1,9 +1,12 @@
 <div ng-controller="TutorialController" class="modal" id="modal-tutorial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">How palava.tv works</h4>
+    <div class="modal-content" style="padding-bottom:30px">
+      <div class="modal-header" style="padding: 0 10px">
+        <ul class="pager">
+          <li class="previous" ng-show="step != 1" ng-click="prev()"><a href="#">&larr; Previous</a></li>
+          <li class="next" ng-show="step != last" ng-click="next()"><a href="#">Next &rarr;</a></li>
+          <li class="next" ng-show="step == last"><a href="#" data-dismiss="modal">Close</a></li>
+        </ul>
       </div>
       <div class="modal-body">
         <div ng-show="step == 1" class="current">
@@ -11,15 +14,15 @@
           Here you can video chat with your friends.
         </div>
         <div ng-show="step == 2">
-          <h3>It has some features, that make it special:</h3><br>
+          <h3>It has some features, that make it special</h3><br>
           The connections are encrypted from browser to browser<br><br>
         </div>
         <div ng-show="step == 3">
-          <h3>It has some features, that make it special:</h3><br>
+          <h3>It has some features, that make it special</h3><br>
           You don't need to register or login, just visit the web page<br><br>
         </div>
         <div ng-show="step == 4">
-          <h3>It has some features, that make it special:</h3><br>
+          <h3>It has some features, that make it special</h3><br>
           There is no person limit except your internet bandwidth<br><br>
         </div>
         <div ng-show="step == 5">
@@ -27,7 +30,6 @@
           Think of a room name (e.g. "caron-eric-chat") and enter it in the room field<br><br>
           Choose which kind of chat you want to open<br><br>
           Send the link in the upper right corner to your friends or tell them name!<br><br>
-          If all works well, you can now see and hear each other!
         </div>
         <div ng-show="step == 6">
           <h3>How it works (option 2)</h3><br>
@@ -35,18 +37,15 @@
           You can now send the link (upper right corner on the chat-page) to your communication partners!</li>
         </div>
         <div ng-show="step == 7">
-          <h3>palava.tv works (for now) in the following browsers:</h3><br>
+          <h3>If all works well...</h3><br>
+          ...you can now see and hear each other!
+        </div>
+        <div ng-show="step == 8">
+          <h3>palava.tv works in the following browsers:</h3><br>
           Firefox<br><br>
           Chrome / Chromium<br><br>
           Opera<br><br>
         </div>
-      </div>
-      <div class="modal-footer">
-        <ul class="pager">
-          <li class="previous" ng-show="step != 1" ng-click="prev()"><a href="#">&larr; Previous</a></li>
-          <li class="next" ng-show="step != last" ng-click="next()"><a href="#">Next &rarr;</a></li>
-          <li class="next" ng-show="step == last"><a href="#" data-dismiss="modal">Close</a></li>
-        </ul>
       </div>
     </div>
   </div>
