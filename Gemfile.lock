@@ -106,7 +106,9 @@ DEPENDENCIES
   oj
   rack-rewrite
   rb-fsevent
+  rb-inotify (~> 0.9.2)
   sass
   therubyracer
   uglifier
+  wdm
   whiskey_disk
