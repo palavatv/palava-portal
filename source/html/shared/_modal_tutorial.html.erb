@@ -12,39 +12,40 @@
         <div ng-show="step == 1">
           <img src="<%= image_path("palava-papagei.png") %>" />
           <h3>Welcome to palava.tv</h3>
-          Here you can video chat with your friends.<br>
+          Here you can safely video chat with your friends.<br>
         </div>
         <div ng-show="step == 2">
-          <img src="<%= image_path("tutorial-decentralised.png") %>" />
+          <img src="<%= image_path("tutorial-decentralised.jpg") %>" />
           <h3>Palava is encrypted and decentralised</h3><br>
           Your whole video and audio stream is sent fully browser-to-browser encrypted.
           It is sent directly between you and your communication partners and never passes a server.
         </div>
         <div ng-show="step == 3">
           <h3>How it works (option 1)</h3><br>
-          <p>Think of a room name (e.g. "caron-eric-chat") and enter it in the room field<p/><br><br>
+          <p>Think of a room name (e.g. "caron-eric-chat") and enter it in the room field</p>
           <img src="<%= image_path("tutorial-enter-roomname.png") %>" class="step-by-step" />
           <p>Choose which kind of chat you want to open: </p>
           <img src="<%= image_path("tutorial-audio-video.png")  %>" class="step-by-step" />
-          <p>Send the link in the upper right corner to your friends or tell them name!</p><br><br>
+          <p>Send the link in the upper right corner to your friends or tell them the room name!</p>
         </div>
         <div ng-show="step == 4">
           <h3>How it works (option 2)</h3><br>
-          Click on the "Private" button. This will generate a random and long room-name<br><br>
-          <img src="<%= image_path("tutorial-private-button.png") %>" class="step-by-step" />
-          You can now send the link (upper right corner on the chat-page) to your communication partners!</li>
-          <img src="<%= image_path("tutorial-send-link.png") %>" class="step-by-step" />
+          <p>Click on the "Private" button. This will generate a random and long room-name</p>
+          <img src="<%= image_path("tutorial-private-room.png") %>" class="step-by-step" />
+          <p>You can now send the link (upper right corner on the chat-page) to your communication partners!</p>
+          <img src="<%= image_path("tutorial-send-link.jpg") %>" class="step-by-step" />
         </div>
         <div ng-show="step == 5">
-          <img src="<%= image_path("tutorial-chat-papagei.png") %>" />
+          <img src="<%= image_path("tutorial-screenshot.jpg") %>" style="margin-bottom: 0" class="step-by-step" /><br />
+          <span style="font-size: 6pt">
+            <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> palava.tv / <a href="https://secure.flickr.com/photos/ekilby/8154290004/in/photolist-dqySjY-8mnkHt-818uPm-86rMFf-9qp4FP-4St4wL-76eRV4-cUt1HE-7QmWhi-agFzKu-agCMvR-a8NeB-cPrtwW-c33xu7-bzNVa5-ftxFpn-dMucJX-4DeKu8-giLPsi-9bDahX-4n7GAx-4cmsiX-4duCKr-4A8TaM-9mfJf8--cmew8d-bnMsbo-fFFMhV-fFYoWL-4UvYDU-9BMTb3-21Hztc-8YQkzG-foQzwQ-4ZyXfy-6qxi5C-ftN2xs-fFFQ6R-b4N7wr-exdXDZ-em9fhQ-JkRk4-abLo7o-6TLzxC-Pd1aM-9NV6hf-bbXZaV-fFFQM2-adf17w">parrot by Eric Kilby</a>
+          </span>
           <h3>If all works well...</h3><br>
           ...you can now see and hear each other!
         </div>
         <div ng-show="step == 6">
           <h3>palava.tv works in the following browsers:</h3><br>
-          Firefox<br><br>
-          Chrome / Chromium<br><br>
-          Opera<br><br>
+          <%= partial "html/shared/support_list" %>
         </div>
       </div>
     </div>
