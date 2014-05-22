@@ -67,3 +67,14 @@
       color: #999;
     }
 }
+
+#modal-tutorial img {
+  max-width: 85%;
+  width: 25em;
+}
+
+#modal-tutorial img.step-by-step {
+  border: 1px solid black;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}

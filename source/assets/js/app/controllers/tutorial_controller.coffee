@@ -1,7 +1,7 @@
 #= require app/app
 
 @palavaPortal.controller('TutorialController', ['$scope', '$routeParams', '$location', ($scope, $element) =>
-  $scope.last = 8
+  $scope.last = $('#modal-tutorial .modal-body>div').length
   $scope.step = 1
   $scope.next = =>
     $scope.step += 1 unless $scope.step == $scope.last
