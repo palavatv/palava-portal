@@ -2,39 +2,97 @@
 layout: slim
 ---
 
-<div id="wrap">
-  <div class="homepage earth">
-    <div class="content container">
-      <%= image_tag 'palava.png', alt: 'palava.tv' %>
-      <p class="tagline"><strong>browser-to-browser video</strong></p>
-      <form class="join-room form-inline">
-        <div class="hide subscribe-info">
-          <p><strong>Thank you</strong> for being interested in palava. Please enter your email address to receive the latest news on palava and WebRTC!</p>
-        </div>
-        <div class="hide nosupport">
-          <p><strong>Sorry!</strong> Your web browser is not compatible with the latest technologies for video communication on the web. In order to use <a href="/info/how">palava</a>, you will need to install a web browser that supports WebRTC:</p>
-          <%= partial 'html/shared/support_list' %>
-        </div>
-        <div class="join-room-fields">
-          <div class="form-group">
-            <input type="text" maxlength="50" name="room_id" id="room_id" class="input-lg room-id" placeholder="Conference Name" />
-            <button class="btn btn-lg btn-primary btn-go">▸</button>
-          </div>
-          <span class="button-separator">or</span>
-          <button class="btn btn-warning btn-private btn-lg">Private</button>
-          <p>
-          <p>
-          <a href="#" data-toggle="modal" data-target="#modal-tutorial">Show me how it works!</a>
-          <%= partial 'html/shared/modal_tutorial' %>
-        </div>
-        <div class="hide partialsupport">
-          <p><strong>Warning:</strong> Your web browser is not fully compatible with the latest technologies for video communication on the web. You will not be able to communicate with users using Firefox. For full support please use one of the following browsers:
-          <%= partial 'html/shared/support_list' %>
-        </div>
-      </form>
-    </div>
+<div class  = "container">
+<div id     = "homepage">
+    
+<div id     = "logo-wrap">
+  <div id   = "logo">
+    <%= image_tag 'palava.png', alt: 'palava.tv' %>
+    <span id  = "logo-caption">browser-to-browser video</span>
   </div>
 </div>
+
+
+<form class="join-room form-inline">
+
+    <div class="hide subscribe-info">
+      <p><strong>Thank you</strong>
+        for being interested in palava.
+        Please enter your email address
+        to receive the latest news on palava and WebRTC!
+      </p>
+    </div>
+
+    <div class="hide nosupport">
+      <p><strong>Sorry!</strong>
+        Your web browser is not compatible
+        with the latest technologies for video communication on the web.
+        In order to use <a href="/info/how">palava</a>,
+        you will need to install a web browser that supports WebRTC:
+      </p>
+      <%= partial 'html/shared/support_list' %>
+    </div>
+
+    <div class="hide partialsupport">
+      <p><strong>Warning:</strong>
+        Your web browser is not fully compatible
+        with the latest technologies for video communication on the web.
+        You will not be able to communicate with users using Firefox.
+        For full support please use one of the following browsers:
+      </p>
+      <%= partial 'html/shared/support_list' %>
+    </div>
+
+    <!--<div class="join-room-fields">
+      <div>
+      <div class="input-group">
+        <input
+          type        = "text"
+          maxlength   = "50"
+          name        = "room_id"
+          id          = "room_id"
+          class       = "input-lg room-id"
+          placeholder = "Conference Name" />
+        <span
+          class       = "input-group-btn">
+          <button
+            class       = "btn btn-lg btn-primary btn-go">▸</button>
+        </span>
+      </div>
+      </div>
+      <div>
+      <span class="button-separator">or</span>
+      <button class="btn btn-warning btn-private btn-lg">Private</button>
+      </div>
+    </div>
+    -->
+
+    <div class="join-room-fields">
+      <span class="join-room-name">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </span>
+      <span class="join-or">
+        or
+      </span>
+      <span class="join-private">
+        <button class="btn btn-private">Private</button>
+      </span>
+    </div>
+
+    <div>
+      <a href="#" data-toggle="modal" data-target="#modal-tutorial">Show me how it works!</a>
+      <%= partial 'html/shared/modal_tutorial' %>
+    </div>
+
+</form>
+
+</div>      <!-- #homepage  -->
+</div>      <!-- .container -->
 
 <a href="https://github.com/palavatv"><%= image_tag 'github.png', alt: 'Fork me on GitHub', style: "position: absolute; top: 0; right: 0; border: 0;" %></a>
 
