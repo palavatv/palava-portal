@@ -13,6 +13,8 @@
   getUserMediaTitles = (userMediaConfig) ->
     if userMediaConfig.audio && !userMediaConfig.video
       'Microphone'
+    else if userMediaConfig.video?.mandatory?
+      'Screensharing'
     else if !userMediaConfig.audio && userMediaConfig.video
       'Webcam'
     else if !userMediaConfig.audio && !userMediaConfig.video

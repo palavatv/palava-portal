@@ -7,7 +7,7 @@
     <ul class="user-media-buttons">
       <li><button ng-click="initConference({video: true, audio:true})" id="user-media-video-audio" class="btn btn-primary" autofocus="autofocus">Video &amp; Audio</button></li>
       <li><button ng-click="initConference({video: true, audio:false})" id="user-media-video" class="btn btn-info">Video only</button></li>
-      <!-- <li><button ng-click="initConference({video: false, audio:true})" id="user-media-audio" class="btn btn-info">Audio only</button></li> -->
-    </ul>
+      <li><button ng-click="initConference({ audio: false, video: { mandatory: { chromeMediaSource: 'screen', maxWidth: 1280, maxHeight: 720 }, optional: [] } })" id="user-media-screen" class="btn btn-info">Screensharing</button></li>
+<!-- <li><button ng-click="initConference({video: false, audio:true})" id="user-media-audio" class="btn btn-info">Audio only</button></li> --> </ul>
   </div>
 </div>
