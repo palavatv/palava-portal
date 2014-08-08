@@ -19,7 +19,12 @@ Clone this directory and checkout the submodule:
     $ git submodule init
     $ git submodule update
 
-Make sure you have Ruby installed. Clone this repo and in the directory run:
+Make sure you have Ruby and Bundler installed, maybe you also need to export the PATH manually
+    
+    $ ruby -v
+    $ bundle check
+
+after cloning this repo and in the new directory run:
 
     $ bundle install
 
