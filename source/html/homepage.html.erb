@@ -4,7 +4,7 @@ layout: slim
 
 <div class  = "container">
 <div id     = "homepage">
-    
+
 <div id     = "logo-wrap">
   <div id   = "logo">
     <%= image_tag 'palava.png', alt: 'palava.tv' %>
@@ -43,30 +43,26 @@ layout: slim
       <%= partial 'html/shared/support_list' %>
     </div>
 
-    <!--<div class="join-room-fields">
-      <div>
-      <div class="input-group">
+    <div class="row join-room-fields">
+      <div class="col-md-4 input-group input-group-lg">
         <input
-          type        = "text"
-          maxlength   = "50"
-          name        = "room_id"
-          id          = "room_id"
-          class       = "input-lg room-id"
-          placeholder = "Conference Name" />
-        <span
-          class       = "input-group-btn">
-          <button
-            class       = "btn btn-lg btn-primary btn-go">▸</button>
-        </span>
+           type        = "text"
+           maxlength   = "50"
+           name        = "room_id"
+           id          = "room_id"
+           class       = "form-control room-id"
+           placeholder = "Conference Name" />
+        <div class="input-group-btn">
+          <button class="btn btn-primary btn-go">▸</button>
+        </div>
       </div>
-      </div>
-      <div>
-      <span class="button-separator">or</span>
-      <button class="btn btn-warning btn-private btn-lg">Private</button>
+      <div class="col-md-3">
+        <span class="button-separator">or</span>
+        <button class="btn btn-warning btn-private btn-lg">Private</button>
       </div>
     </div>
-    -->
 
+    <!--
     <div class="join-room-fields">
       <span class="join-room-name">
         <div class="input-group">
@@ -74,7 +70,7 @@ layout: slim
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">Go!</button>
           </span>
-        </div><!-- /input-group -->
+        </div>
       </span>
       <span class="join-or">
         or
@@ -83,6 +79,7 @@ layout: slim
         <button class="btn btn-private">Private</button>
       </span>
     </div>
+    <--!>
 
     <div>
       <center><a href="#" data-toggle="modal" data-target="#modal-tutorial">Show me how it works!<
