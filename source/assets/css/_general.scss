@@ -38,14 +38,11 @@ a {
   }
 }
 
+/* bootstrap standard class */
+/* TODO check if it needs removal */
 .container {
   margin-top: 5px;
   margin-bottom: 40px;
-  min-width: 600px;
-  width: 50em;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: justify;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -157,12 +154,8 @@ footer {
 }
 
 .support-list {
-  text-align: left;
-  background: #e0e0e0;
+  padding: 0;
   border-radius: 5px;
-  li {
-    line-height: 30px;
-  }
   img {
     margin: 7px 10px;
   }
