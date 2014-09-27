@@ -152,6 +152,10 @@ nav {
             background: $main-background-color;
         }
     }
+
+    video::-webkit-media-controls {
+        display: none !important;
+    }
 }
 
 .modal-center{
