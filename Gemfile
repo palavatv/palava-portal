@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 3.2.0'
+gem 'middleman', '~> 3.3.7'
 gem 'middleman-bower'
 gem 'uglifier'
 gem 'sass'
@@ -10,7 +10,3 @@ gem 'therubyracer'
 gem 'oj'
 gem 'rack-rewrite'
 gem 'whiskey_disk'
-
-group :development do
-  gem 'debugger'
-end
