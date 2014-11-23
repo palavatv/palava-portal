@@ -49,6 +49,10 @@ You can set the addresses of the rtc and stun server via environment variables. 
     $ export PALAVA_BASE_ADDRESS="https://your.domain.com"
     $ middleman
 
+## Issues
+
+Please report issues to the [palava Repository](https://github.com/palavatv/palava/issues).
+
 ## Credits
 
 MIT License. Part of the [palava project](https://palava.tv).
