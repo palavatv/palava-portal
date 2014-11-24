@@ -1,0 +1,35 @@
+require 'bundler'
+Bundler.require
+
+# TODO extra file
+smtp_options = {
+  domain: 'palava.tv',
+  :address        => 'palava.tv',
+  :port           => '25',
+  :user_name      => 'contact',
+  :password       => 'Ievai6ai',
+  :authentication => :plain,
+  enable_starttls_auto: true,
+  openssl_verify_mode:  'none',
+}
+
+
+namespace :deploy do
+  desc 'wd post deploy'
+  task 'post_deploy' do
+    puts "## SEND EMAIL ##"
+
+    Pony.mail(
+      to: 'contact@palava.tv',
+      from: 'contact@palava.tv',
+      via: :smtp,
+      via_options: smtp_options,
+      subject: '[palava-deploy] playground deployed',
+      body: "playground has been deployed at #{Time.now}. The last 10 commits are:\n\n" + `git log -n 10`
+    )
+  end
+end
+
+task :default  do
+  # nothing
+end
