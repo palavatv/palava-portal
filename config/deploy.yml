@@ -6,14 +6,6 @@ production:
   domain: "palava@176.28.9.212"
   repository: "/home/git/portal.git"
 
-beta:
-  branch: "beta"
-  deploy_to: "/home/palava/www/portal-beta"
-  post_deploy_script: config/post_deploy.sh
-  post_setup_script:  config/post_deploy.sh
-  domain: "palava@176.28.9.212"
-  repository: "/home/git/portal.git"
-
 playground:
   branch: "playground"
   deploy_to: "/home/palava/www/portal-playground"
