@@ -37,7 +37,7 @@
     else if $scope.state.peerOnStage != peer
       # $scope.log('setting peer on stage', peer)
       $scope.state.peerOnStage = peer
-      palava.browser.fixAudio $('.plv-video-wrapper[data-peer-id=' + peer.id + ']')
+      if !peer.isLocal() then palava.browser.fixAudio $('.plv-video-wrapper[data-peer-id=' + peer.id + ']')
       $scope.$apply() unless $scope.$$phase # ...
 
   $scope.applyMuteStatuses = -> # chrome workaround :(

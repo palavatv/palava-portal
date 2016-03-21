@@ -12,9 +12,6 @@
       $('.join-room-fields').hide()
       $('.nosupport').show()
     else
-      if palava.browser.checkForPartialSupport()
-        $('.partialsupport').show()
-
       $('.earth img, .earth strong').click -> $('#room_id').focus(); true
       $('#room_id').focus()
 
