@@ -1,5 +1,6 @@
 echo "## SET RUBY ##"
 source /etc/profile.d/chruby.sh
+ruby -v
 echo "## BUNDLE ##"
 bundle install --deployment --without test:development
 echo "## GIT SUBMODULE ##"
