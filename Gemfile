@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 3.4'
+gem 'middleman', '~> 4.1'
 gem 'uglifier'
 gem 'sass'
 gem 'rb-inotify', '~> 0.9.2' if RUBY_PLATFORM.downcase.include?("linux")
