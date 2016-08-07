@@ -4,8 +4,7 @@ const StartPage = (props) => {
       <div id="wrap">
         <div className="homepage earth">
           <div className="content container">
-            // image_tag 'palava.png', alt: 'palava.tv'
-            <p className="tagline"><strong>browser-to-browser video</strong></p>
+            <img src="/assets/images/palava-papagei.svg" alt="palava.tv" />
             <form className="join-room">
               <div className="hide subscribe-info">
                 <p><strong>Thank you</strong> for being interested in palava. Please enter your email address to receive the latest news on palava and WebRTC!</p>
