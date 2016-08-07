@@ -1,8 +1,5 @@
-//= require      angular/angular
-//= require      bootstrap/docs/assets/js/bootstrap
-//= require      angular-strap/dist/angular-strap
+//= require      react
+//= require      jquery
 //= require_tree ./lib
-//= require_tree ./app
-//= require      ./_ready
-
-// TODO proper loading (no detailed paths) works with MM but not via rails...
+//  require_tree ./app
+//  require      ./_ready
