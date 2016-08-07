@@ -16,7 +16,12 @@ set :opera_link, 'http://www.opera.com'
 
 # - - -
 
-activate :sprockets
+require 'sprockets/es6'
+
+activate :sprockets do |s|
+  s.supported_output_extensions << '.es6'
+  s.supported_output_extensions << '.jsx'
+end
 
 after_configuration do
   sprockets.append_path "#{root}/node_modules"

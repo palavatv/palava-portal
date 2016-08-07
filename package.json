@@ -21,6 +21,7 @@
   "homepage": "https://github.com/palavatv/palava-portal",
   "dependencies": {
     "jquery": "^3.1.0",
-    "react": "^15.3.0"
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
   }
 }

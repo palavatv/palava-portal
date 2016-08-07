@@ -3,7 +3,7 @@ layout: false
 ---
 
 <!doctype html>
-<html lang="en" ng-app="palava-portal">
+<html lang="en">
   <head>
     <title ng-bind="title">palava.tv</title>
     <meta charset="utf-8">
@@ -15,8 +15,8 @@ layout: false
     <%= javascript_include_tag "palava","all" %>
   </head>
 
-  <body class="<%= page_classes %>" ng-controller="ApplicationController">
-    <div ng-view id="view" class="view">
+  <body class="<%= page_classes %>">
+    <div id="app">
       <%= partial '/html/noscript' %>
     </div>
   </body>

@@ -1,4 +1,4 @@
-#= require app/app
+# # require app/app
 
-@palavaPortal.controller('StaticController', ['$scope', '$routeParams', '$location', ($scope, $routeParams, $location) ->
-])
+# @palavaPortal.controller('StaticController', ['$scope', '$routeParams', '$location', ($scope, $routeParams, $location) ->
+# ])
