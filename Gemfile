@@ -7,5 +7,5 @@ gem 'rb-inotify', '~> 0.9.2' if RUBY_PLATFORM.downcase.include?("linux")
 gem 'rb-fsevent' if RUBY_PLATFORM.downcase.include?("darwin")
 gem 'therubyracer'
 gem 'oj'
-gem 'rack-rewrite'
+# gem 'rack-rewrite'
 gem 'whiskey_disk'
