@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-  ReactDOM.render(<App />, document.getElementById("app"))
+  ReactDOM.render(<PalavaRouter />, document.getElementById("app"))
 })
 
 // # @palavaPortal = angular.module('palava-portal', ['$strap.directives'])

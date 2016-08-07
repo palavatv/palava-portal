@@ -1,3 +1,5 @@
 const App = (props) => {
-  return <div>React Palava</div>
+  return (
+    <div>Hello Palava</div>
+  )
 }
