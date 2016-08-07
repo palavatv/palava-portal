@@ -16,6 +16,14 @@ set :opera_link, 'http://www.opera.com'
 
 # - - -
 
+activate :sprockets
+
+after_configuration do
+  sprockets.append_path "#{root}/node_modules"
+end
+
+# - - -
+
 configure :build do
   ignore 'assets/js/**/*'
   ignore 'node_modules'

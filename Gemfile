@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'middleman', '~> 4.1'
+gem 'middleman-sprockets', '~> 4.0'
 gem 'uglifier'
 gem 'sass'
 gem 'rb-inotify', '~> 0.9.2' if RUBY_PLATFORM.downcase.include?("linux")
