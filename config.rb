@@ -5,13 +5,13 @@ set :layout, 'static'
 
 set :palava_domain, 'https://palava.tv'
 set :chrome, 'Google Chrome'
-set :chrome_description, 'Google Chrome 26 or above'
+set :chrome_description, 'Google Chrome'
 set :chrome_link, 'https://google.com/chrome'
 set :firefox, 'Mozilla Firefox'
-set :firefox_description, 'Mozilla Firefox 22 or above'
+set :firefox_description, 'Mozilla Firefox'
 set :firefox_link, 'https://www.mozilla.org/firefox'
 set :opera, 'Opera'
-set :opera_description, 'Windows Opera 18 or above'
+set :opera_description, 'Opera'
 set :opera_link, 'http://www.opera.com'
 
 # - - -
