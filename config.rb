@@ -32,15 +32,14 @@ end
 configure :build do
   ignore 'assets/js/**/*'
   ignore 'node_modules'
-  activate :asset_hash
   activate :minify_css
+  # activate :asset_hash
   activate(:minify_javascript,
       ignore: ['assets/js/app', 'node_modules', 'assets/js/lib', 'assets/js/palava'],
       compressor: Uglifier.new(JSON(
         File.read(File.dirname(__FILE__) + '/source/assets/js/palava/uglifier_options.json')
       )),
   )
-  # set :http_path, "/Content/images/"
 end
 
 # react html5 routing
