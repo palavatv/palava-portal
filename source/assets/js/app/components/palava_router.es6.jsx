@@ -8,4 +8,5 @@ const PalavaRouter = (props) => {
   )
 }
 
+const Link = ReactRouter.Link
 // <Route path="*" component={NoMatch}/>

@@ -6,12 +6,9 @@ const StartPage = (props) => {
           <div className="content container">
             <img src="/assets/images/palava-papagei.svg" alt="palava.tv" />
             <form className="join-room">
-              <div className="hide subscribe-info">
-                <p><strong>Thank you</strong> for being interested in palava. Please enter your email address to receive the latest news on palava and WebRTC!</p>
-              </div>
               <div className="hide nosupport">
                 <p><strong>Sorry!</strong> Your web browser is not compatible with the latest technologies for video communication on the web. In order to use <a href="/info/how">palava</a>, you will need to install a web browser that supports WebRTC:</p>
-                 // partial 'html/shared/support_list'
+                <SupportList/>
               </div>
               <div className="join-room-fields">
                 <div className="input-append">

@@ -6,20 +6,6 @@ document.addEventListener("DOMContentLoaded", function(){
 // # <% require 'digest/sha2' %>
 // # plvAssetVersion = "<%= system('git rev-parse HEAD > /dev/null') ? Digest::SHA512.hexdigest(rand().to_s) : Digest::SHA512.hexdigest(`git rev-parse HEAD`)  %>"
 
-// # @palavaPortal.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-// #   $routeProvider.
-// #     when('/',                 { templateUrl: '/html/homepage.html?'      + plvAssetVersion, controller: 'HomepageController', }).
-// #     when('/info/how',         { templateUrl: '/html/info/how.html?'      + plvAssetVersion, controller: 'StaticController',     title: 'How to Use' }).
-// #     when('/info/ev',          { templateUrl: '/html/info/ev.html?'       + plvAssetVersion, controller: 'StaticController',     title: 'e. V.' }).
-// #     when('/info/contact',     { templateUrl: '/html/info/contact.html?'  + plvAssetVersion, controller: 'StaticController',     title: 'Contact' }).
-// #     when('/info/feedback',    { templateUrl: '/html/info/feedback.html?' + plvAssetVersion, controller: 'FeedbackController',   title: 'Feedback' }).
-// #     when('/info/error',       { templateUrl: '/html/info/error.html?'    + plvAssetVersion, controller: 'SorryController',      title: 'Sorry' }).
-// #     when('/info',             { redirectTo: '/info/how' }).
-// #     when('/:roomId',          { templateUrl: '/html/conference.html?'    + plvAssetVersion, controller: 'ConferenceController' }).
-// #     otherwise({ redirectTo: '/' })
-// #   $locationProvider.html5Mode true
-// # ]
-
 // # @palavaPortal.run ['$location', '$rootScope', '$routeParams', ($location, $rootScope, $routeParams) ->
 // #   setupTitle = (current) ->
 // #     if current && current.$$route && current.$$route.title
