@@ -1,5 +1,3 @@
-$('.noscript-hint').hide()
-
 $ ->
   ## share link ##
   $(document).on 'click', '#share-link', ->

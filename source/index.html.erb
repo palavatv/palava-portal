@@ -17,7 +17,7 @@ layout: false
 
   <body>
     <div id="app">
-      <div class="noscript-hint">
+      <div class="noscript-hint" id="noscript-hint">
         <p>
           <strong>palava is a <a href="https://en.wikipedia.org/wiki/WebRTC">WebRTC</a> based video communication platform.</strong>
         </p>
@@ -26,6 +26,9 @@ layout: false
           Please use a recent version of <a href="https://google.com/chrome">Google Chrome</a> or <a href="https://www.mozilla.org/firefox">Mozilla Firefox</a> and activate JavaScript to be able to use <strong>palava.tv</strong>!
         </p>
       </div>
+      <script type="text/javascript">
+        document.getElementById('noscript-hint').style.display = 'none';
+      </script>
     </div>
   </body>
 </html>
