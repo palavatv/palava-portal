@@ -17,7 +17,15 @@ layout: false
 
   <body class="<%= page_classes %>">
     <div id="app">
-      <%= partial '/html/noscript' %>
+      <div class="noscript-hint">
+        <p>
+          <strong>palava.tv is a <a href="https://en.wikipedia.org/wiki/WebRTC">WebRTC</a> based video communication platform.</strong>
+        </p>
+        <p>
+          Your web browser has JavaScript deactivated or is not compatible with the newest JavaScript features.<br/>
+          Please use a recent version of <a href="https://google.com/chrome">Google Chrome</a> or <a href="https://www.mozilla.org/firefox">Mozilla Firefox</a> and activate JavaScript to be able to use <strong>palava.tv</strong>!
+        </p>
+      </div>
     </div>
   </body>
 </html>
