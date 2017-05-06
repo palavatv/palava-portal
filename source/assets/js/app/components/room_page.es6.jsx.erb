@@ -70,7 +70,7 @@ class RoomPage extends React.Component {
           userMediaConfig: userMediaConfig
         }),
         options: {
-          stun: "stun:stun.palava.tv",
+          stun: "<%= ENV['PALAVA_STUN_ADDRESS'] || 'stun:stun.palava.tv' %>",
           joinTimeout: 500,
         }
       })
@@ -116,7 +116,7 @@ class RoomPage extends React.Component {
     rtc = new palava.Session({
       roomId: this.props.params.roomId,
       peers: [],
-      channel: new palava.WebSocketChannel("ws:localhost:4233"),
+      channel: new palava.WebSocketChannel("<%= ENV['PALAVA_RTC_ADDRESS'] || 'ws:localhost:4233' %>"),
     })
 
     rtc.on('argument_error', (e) => {
@@ -241,7 +241,7 @@ class RoomPage extends React.Component {
     const state = this.state
     const peers = state.peers // | orderBy: 'joinTime'"
 
-    const palavaDomain = "palava.tv"
+    const palavaDomain = "<%= ENV['PALAVA_BASE_ADDRESS'] || 'palava.tv' %>"
     const encodedRoomId = encodeURIComponent(props.params.roomId)
     const isSecretConference = /^\w{8}(-\w{4}){3}-\w{12}$/.test(props.params.roomId)
 
