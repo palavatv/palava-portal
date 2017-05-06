@@ -279,10 +279,7 @@ class RoomPage extends React.Component {
               <span className="alert-content"></span>
             </p>
 
-            <p id="share-link-text" className="pull-right">
-              <strong>copy and share this link to invite people to the conference </strong>
-              <span id="share-link" tabIndex="0" onClick={(event) => event.target.select()}>{ palavaDomain }/{ encodedRoomId }</span>
-            </p>
+            <ShareLink link={ palavaDomain + "/" + encodedRoomId } />
 
             <div className="navbar-header">
               <Link to={'/' + encodedRoomId} className={roomClasses}>{ readableRoomId }</Link>

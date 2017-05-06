@@ -8,4 +8,3 @@
 //= require_tree  ./app/components
 //= require       ./app/misc
 //= require       ./app/main
-//= require       ./_ready
