@@ -1,10 +1,11 @@
 const PeerOnStagePlaceholder = (props) => {
   return <div id="plv-stage-placeholder">
-    You are all set! You can now:
+    <strong>You are all set! You can now:</strong>
     <ul>
-      <li>share the link to this conference</li>
-      <li>click on a small video to make it big</li>
-      <li>double click on a video to set it to fullscreen mode</li>
+      <li>Share the link to this conference</li>
+      <li>Click on a small video to make it large</li>
+      <li>Double click on a video to set it to fullscreen mode</li>
+      <li>Follow us on <a href="https://twitter.com/palavatv">Twitter</a></li>
     </ul>
   </div>
 }
