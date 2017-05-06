@@ -50,5 +50,4 @@ class StartPage extends React.Component {
     e.preventDefault()
     ReactRouter.browserHistory.push(guid())
   }
-
 }
