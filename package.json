@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/palavatv/palava-portal",
   "dependencies": {
-    "jquery": "^3.1.0",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-router": "^2.6.1",
+    "jquery": "^3.2.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^3.0.5",
     "wolfy87-eventemitter": "^5.1.0"
   }
 }
