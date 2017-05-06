@@ -44,7 +44,6 @@ class Peer extends React.Component {
     if(peer.isReady()){
       var peerVideo = <WebrtcVideo
           peer={peer}
-          poster="/assets/images/poster.png"
           clickFn={() => props.setPeerOnStageFn(peer)}
           />
     } else {

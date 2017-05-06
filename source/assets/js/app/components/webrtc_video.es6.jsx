@@ -35,6 +35,7 @@ class WebrtcVideo extends React.Component {
     if(props.peer.isLocal()){ classNames += ' plv-local-video' }
 
     return <video autoPlay muted className={classNames}
+        poster="/assets/images/poster.png"
         ref={(video) => { this.video = video }}
         onClick={props.clickFn || (() => {}) }
         />
