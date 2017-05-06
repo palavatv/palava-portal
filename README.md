@@ -1,13 +1,17 @@
-# Palava Portal
+# palava.tv
+
+palava.tv is simplistic video communication with your friends and colleagues from within your web browser. No registration or browser plugin required.
+
+# palava.tv | Portal
 
 The palava portal is the single-page web application which runs [palava.tv](https://palava.tv). It is built using the following technologies:
 
-- [Palava Client](https://github.com/palavatv/palava-client)
+- [palava-client](https://github.com/palavatv/palava-client)
 - [React](https://facebook.github.io/react/)
 - [Middleman](http://middlemanapp.com/)
 - [Twitter Bootstrap](http://getbootstrap.com/)
 
-## Portal Setup
+### Setup
 
 Clone this directory and checkout the submodule:
 
@@ -40,7 +44,7 @@ You can build a static version of the page using:
 
     $ middleman build
 
-### Configure using Environment Variables
+#### Configure using Environment Variables
 
 You can set the addresses of the rtc and stun server via environment variables. The defaults are a local rtc server 'ws:localhost:4233' and the palava stun server 'stun:stun.palava.tv'. Use `ws:` for unsecured and `wss:` for ssl secured websocket connections.
 
