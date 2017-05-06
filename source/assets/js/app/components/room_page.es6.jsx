@@ -7,7 +7,6 @@ class RoomPage extends React.Component {
       uiState: "user_media_configurator",
       peers: [],
     }
-    // props.forceSupport
   }
 
   getUserMediaTitles(userMediaConfig){
@@ -125,7 +124,7 @@ class RoomPage extends React.Component {
     })
 
     rtc.on('webrtc_no_support', () => {
-      if(!this.props.forceSupport){
+      if(this.props.params.supported !== '1'){
         logger.error('webrtc not supported')
         goHome()
       }
@@ -133,12 +132,12 @@ class RoomPage extends React.Component {
 
     rtc.on('webrtc_partial_support', () => {
       logger.warn('webrtc only partially supported!')
-      this.palavaAlert('<strong>Warning:</strong> Your browser is not fully supported. See <a href="/info/how">How it Works</a> for more informations. Please update or use another browser to avoid compability issues!')
+      palavaAlert('<strong>Warning:</strong> Your browser is not fully supported. See <a href="/info/how">How it Works</a> for more informations. Please update or use another browser to avoid compability issues!')
     })
 
     rtc.on('signaling_not_reachable', () => {
       logger.error('signaling server not reachable')
-      this.palavaAlert('Unfortunately, the palava rtc server seems to be down! Please try again later!')
+      palavaAlert('Unfortunately, the palava rtc server seems to be down! Please try again later!')
     })
 
     rtc.on('signaling_error', (error) => {
@@ -152,11 +151,11 @@ class RoomPage extends React.Component {
 
     rtc.on('room_join_error', () => {
       logger.error('room not joinable')
-      this.palavaAlert('Unfortunately, the palava rtc server seems to be down! Please try again later!') // TODO modal
+      palavaAlert('Unfortunately, the palava rtc server seems to be down! Please try again later!') // TODO modal
     })
 
     rtc.on('room_full', () => {
-      this.palavaAlert('Sorry, the conference room <strong>' + this.props.params.roomId + '</strong> is full! Please <a href="javascript:window.location.reload()">try again</a> or go back to the <a href="/#/">homepage</a>!') // TODO oo
+      palavaAlert('Sorry, the conference room <strong>' + this.props.params.roomId + '</strong> is full! Please <a href="javascript:window.location.reload()">try again</a> or go back to the <a href="/#/">homepage</a>!') // TODO oo
     })
 
     rtc.on('room_joined', (room) => {
@@ -217,14 +216,16 @@ class RoomPage extends React.Component {
     this.setState({ rtc })
   }
 
-  componentDidMount() {
-    if(this.props.forceSupport === false){
-      goHome()
-      return
-    }
 
-    this.updateUiState(this.state.uiState)
-    this.setupRtc()
+  componentDidMount() {
+    if(this.props.params.supported === '0'){
+      goHome()
+    } else if(this.props.params.roomId.length > 50){
+      window.location.replace(this.props.params.roomId.substr(0,50))
+    } else {
+      this.updateUiState(this.state.uiState)
+      this.setupRtc()
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -238,12 +239,19 @@ class RoomPage extends React.Component {
   render(){
     const props = this.props
     const state = this.state
-
-    const encodedRoomId = "/" + props.params.roomId
-    const readableRoomId = props.params.roomId
-    const palavaDomain = "palava.tv"
-    const roomClasses = ""
     const peers = state.peers // | orderBy: 'joinTime'"
+
+    const palavaDomain = "palava.tv"
+    const encodedRoomId = encodeURIComponent(props.params.roomId)
+    const isSecretConference = /^\w{8}(-\w{4}){3}-\w{12}$/.test(props.params.roomId)
+
+    if(isSecretConference){
+      var readableRoomId = "Secret Conference"
+      var roomClasses = "palava-private-room"
+    } else {
+      var readableRoomId = decodeURIComponent(props.params.roomId)
+      var roomClasses = "palava-room"
+    }
 
     const peerList = peers.map( (peer) => {
       return <Peer
@@ -277,7 +285,7 @@ class RoomPage extends React.Component {
             </p>
 
             <div className="navbar-header">
-              <a href={encodedRoomId} className={roomClasses}>{ readableRoomId }</a>
+              <Link to={'/' + encodedRoomId} className={roomClasses}>{ readableRoomId }</Link>
             </div>
           </div>
         </nav>
