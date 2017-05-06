@@ -53,6 +53,18 @@ You can set the addresses of the rtc and stun server via environment variables. 
     $ export PALAVA_BASE_ADDRESS="https://your.domain.com"
     $ middleman
 
+##### Defaults
+
+    PALAVA_BASE_ADDRESS="localhost:4567"
+    PALAVA_STUN_ADDRESS="stun:stun.palava.tv"
+    PALAVA_RTC_ADDRESS="ws:localhost:4233"
+
+##### Use with palava.tv
+
+    PALAVA_BASE_ADDRESS="palava.tv"
+    PALAVA_STUN_ADDRESS="stun:stun.palava.tv"
+    PALAVA_RTC_ADDRESS="wss:machine.palava.tv"
+
 ## Issues
 
 Please report issues to the [palava main repository](https://github.com/palavatv/palava/issues).

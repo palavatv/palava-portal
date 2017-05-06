@@ -241,7 +241,7 @@ class RoomPage extends React.Component {
     const state = this.state
     const peers = state.peers // | orderBy: 'joinTime'"
 
-    const palavaDomain = "<%= ENV['PALAVA_BASE_ADDRESS'] || 'palava.tv' %>"
+    const palavaDomain = "<%= ENV['PALAVA_BASE_ADDRESS'] || 'localhost:4567' %>"
     const encodedRoomId = encodeURIComponent(props.params.roomId)
     const isSecretConference = /^\w{8}(-\w{4}){3}-\w{12}$/.test(props.params.roomId)
 
