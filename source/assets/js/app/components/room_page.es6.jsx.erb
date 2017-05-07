@@ -231,7 +231,9 @@ class RoomPage extends React.Component {
   render(){
     const props = this.props
     const state = this.state
-    const peers = state.peers // | orderBy: 'joinTime'"
+    const peers = state.peers.sort( (peerA, peerB) => {
+      return peerA.joinTime < peerB.joinTime ? -1 : 1
+    })
 
     const palavaDomain = "<%= ENV['PALAVA_BASE_ADDRESS'] || 'localhost:4567' %>"
     const encodedRoomId = encodeURIComponent(props.params.roomId)
