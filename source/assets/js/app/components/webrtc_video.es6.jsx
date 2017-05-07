@@ -11,6 +11,11 @@ class WebrtcVideo extends React.Component {
 
   componentDidMount(){
     palava.browser.registerFullscreen($(this.video), 'dblclick')
+
+    if(this.props.isMuted){
+      $(this.video).attr('muted', '') // react / jsx workaround
+    }
+
     if(this.props.peer.isReady){
       this.attachPeerStream()
     }
@@ -22,6 +27,10 @@ class WebrtcVideo extends React.Component {
         this.props.peer != prevProps.peer ) ){
       this.attachPeerStream()
     }
+
+    if(this.props.isMuted){
+      $(this.video).attr('muted', '') // react / jsx workaround
+    }
   }
 
   render(){
@@ -30,7 +39,10 @@ class WebrtcVideo extends React.Component {
     let classNames = 'plv-video-like'
     if(props.peer.isLocal()){ classNames += ' plv-local-video' }
 
-    return <video autoPlay muted={props.isMuted} className={classNames}
+    return <video
+        autoPlay
+        muted={props.isMuted}
+        className={classNames}
         poster="/assets/images/poster.png"
         ref={(video) => { this.video = video }}
         onClick={props.clickFn || (() => {}) }
