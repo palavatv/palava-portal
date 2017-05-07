@@ -264,58 +264,33 @@ class RoomPage extends React.Component {
       var peerOnStageOrPlaceholder = <PeerOnStagePlaceholder/>
     }
 
-    return (
-      <div>
-        <nav className="navbar navbar-fixed-top">
-          <div className="navbar-inner conference-nav">
-            <p id="palava-alert" className="alert hide">
-              <button type="button" className="close" data-dismiss="alert">&times;</button>
-              <span className="alert-content"></span>
-            </p>
+    return <div>
+      <ConferenceInfoBar
+          roomLink={ palavaDomain + "/" + encodedRoomId }
+          roomClasses={ roomClasses }
+          readableRoomId={ readableRoomId }
+          />
 
-            <ShareLink link={ palavaDomain + "/" + encodedRoomId } />
-
-            <div className="navbar-header">
-              <Link to="/">
-                <img src="/assets/images/palava-papagei.svg" alt="palava.tv" className="brand-logo" />
-              </Link>
-              <Link to={'/' + encodedRoomId} className={roomClasses}>
-                { readableRoomId }
-              </Link>
-            </div>
+      <div className="conference">
+        <div className="plv-stage-container">
+          <div className="plv-stage">
+            { peerOnStageOrPlaceholder }
           </div>
-        </nav>
 
-        <div id="conference" className="container-fluid">
-          <div className="row-fluid row">
-
-            <div className="span-fixed-sidebar plv-stage-container">
-              <div className="row-fluid">
-                <div className="stage plv-stage">
-                  { peerOnStageOrPlaceholder }
-                </div>
-              </div>
-            </div>
-
-            <div className="plv-video-bar">
-              <aside className="well sidebar-nav-fixed">
-                <ul className="nav plv-participants">
-                  { peerList }
-                </ul>
-              </aside>
-            </div>
-          </div>
+          <Footer/>
         </div>
-        <Footer/>
 
-        <UserMediaConfiguratorModal
-            initConferenceFn={this.initConference.bind(this)}
-            />
-        <UserMediaHintModal
-            userMediaTitles={this.state.userMediaTitles}
-            />
-        <MaintenanceModal/>
+        <aside className="plv-video-bar">
+          <ul className="nav plv-participants">
+            { peerList }
+          </ul>
+        </aside>
+
       </div>
-    )
+
+      <UserMediaConfiguratorModal initConferenceFn={this.initConference.bind(this)}/>
+      <UserMediaHintModal userMediaTitles={this.state.userMediaTitles}/>
+      <MaintenanceModal/>
+    </div>
   }
 }

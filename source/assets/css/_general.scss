@@ -95,9 +95,13 @@ footer {
   position: fixed;
   bottom: 0px;
   left: 0px;
-  right: 0px;
+  width: 100%;
+  height: $footer-height;
   text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
   ul {
+    text-align: center;
     display: inline-block;
     padding: 5px 10px 5px 0px;
     font-size: 14px;

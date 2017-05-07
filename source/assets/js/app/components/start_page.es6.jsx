@@ -54,9 +54,9 @@ class StartPage extends React.Component {
             { joinRoomFieldsOrNoSupport }
           </form>
         </div>
+        <Footer/>
       </div>
       <GitHubRibbon/>
-      <Footer/>
     </div>
   }
 
