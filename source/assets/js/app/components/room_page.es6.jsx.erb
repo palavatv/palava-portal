@@ -276,7 +276,12 @@ class RoomPage extends React.Component {
             <ShareLink link={ palavaDomain + "/" + encodedRoomId } />
 
             <div className="navbar-header">
-              <Link to={'/' + encodedRoomId} className={roomClasses}>{ readableRoomId }</Link>
+              <Link to="/">
+                <img src="/assets/images/palava-papagei.svg" alt="palava.tv" className="brand-logo" />
+              </Link>
+              <Link to={'/' + encodedRoomId} className={roomClasses}>
+                { readableRoomId }
+              </Link>
             </div>
           </div>
         </nav>

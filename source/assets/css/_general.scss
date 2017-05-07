@@ -84,24 +84,28 @@ nav {
   .navbar-header{
     padding-left: 20px !important;
   }
+  img.brand-logo{
+    height: 30px;
+    margin-right: 10px;
+    transform: translateY(-2px);
+  }
 }
 
 footer {
-  min-width: 800px;
-  font-size: 14px;
-  border-top: 1px solid $footer-line-color;
-  // box-shadow: 0 0 1px rgba(0, 0, 0, 0.05) !important;
   position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  padding: 5px 10px 5px 0px;
-  background-color: $footer-background-color;
-  z-index: 3; // bootstrap input field bugs
+  text-align: center;
   ul {
-  	margin: 0px;
-  	padding: 0px;
-  	list-style: none;
+    display: inline-block;
+    padding: 5px 10px 5px 0px;
+    font-size: 14px;
+    background-color: $footer-background-color;
+    border: 1px solid $footer-line-color;
+    border-bottom: none;
+    margin: auto;
+    list-style: none;
   	li {
   	  margin: 0px;
   	  padding: 0px 10px;
@@ -110,9 +114,6 @@ footer {
   	    border-right: 1px solid #ccc;
   	  }
   	}
-  }
-  img.brand-logo{
-    height: 16px;
   }
   .thank-you {
     display: none;
