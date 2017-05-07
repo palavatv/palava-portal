@@ -3,9 +3,15 @@ class Peer extends React.Component {
     super(props)
   }
 
+  toggleMute(){
+    this.props.peer.toggleMute()
+    this.forceUpdate()
+  }
+
   render(){
     const props = this.props
     const peer = props.peer
+    const toggleMute = this.toggleMute.bind(this)
 
     if(props.active){
       var activeClassName = " plv-active-video-wrapper"
@@ -19,7 +25,7 @@ class Peer extends React.Component {
       } else {
         var volumeControl = <span>🔊</span>
       }
-      var finalVolumeControl = <a href="javascript:void(0)" onClick={() => peer.toggleMute()} className="plv-video-mute">
+      var finalVolumeControl = <a href="javascript:void(0)" onClick={toggleMute} className="plv-video-mute">
         { volumeControl }
       </a>
     } else if(!peer.hasAudio() && (!peer.isLocal() || props.noLocalAudio)){
@@ -44,6 +50,7 @@ class Peer extends React.Component {
     if(peer.isReady()){
       var peerVideo = <WebrtcVideo
           peer={peer}
+          isMuted={peer.isMuted()}
           clickFn={() => props.setPeerOnStageFn(peer)}
           />
     } else {

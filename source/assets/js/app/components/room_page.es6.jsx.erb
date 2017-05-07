@@ -43,20 +43,12 @@ class RoomPage extends React.Component {
   // public
 
   setPeerOnStage(peer){
-   if(!peer || !peer.getStream())
-     this.setState({peerOnStage: null})
-   else if(this.state.peerOnStage != peer){
-     this.setState({peerOnStage: peer})
-     // if(!peer.isLocal()){
-     //   palava.browser.fixAudio($('.plv-video-wrapper[data-peer-id=' + peer.id + ']'))
-     // }
-   }
+    if(!peer || !peer.getStream())
+      this.setState({peerOnStage: null})
+    else if(this.state.peerOnStage != peer){
+      this.setState({peerOnStage: peer})
+    }
   }
-
-  // applyMuteStatuses(){ // chrome workaround :(
-  //   $('.plv-video-wrapper video').prop('muted', true)
-  //   $('.plv-video-wrapper [data-peer-muted=false]~video').prop('muted', false)
-  // }
 
   initConference(userMediaConfig){
     this.setState({
@@ -181,11 +173,11 @@ class RoomPage extends React.Component {
 
     rtc.on("peer_joined", (peer) => {
       logger.log('peer joined', peer)
-      this.checkPeers()
     })
 
     rtc.on("peer_stream_ready", (peer) => {
       logger.log('peer stream ready', peer)
+      this.checkPeers()
       this.checkStage()
     })
 
@@ -265,7 +257,7 @@ class RoomPage extends React.Component {
     })
 
     if(state.peerOnStage){
-      var peerOnStageOrPlaceholder = <WebrtcVideo peer={state.peerOnStage}/>
+      var peerOnStageOrPlaceholder = <WebrtcVideo peer={state.peerOnStage} isMuted={true}/>
     } else {
       var peerOnStageOrPlaceholder = <PeerOnStagePlaceholder/>
     }
