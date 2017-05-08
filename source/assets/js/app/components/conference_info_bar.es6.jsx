@@ -12,7 +12,7 @@ const ConferenceInfoBar = (props) => {
         <Link to="/">
           <img src="/assets/images/palava-papagei.svg" alt="palava.tv" className="brand-logo" />
         </Link>
-        <Link to={ props.roomLink } className={ props.roomClasses }>
+        <Link to={ "/" + props.encodedRoomId } className={ props.roomClasses }>
           { props.readableRoomId }
         </Link>
       </div>
