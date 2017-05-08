@@ -11,13 +11,13 @@ class RoomPage extends React.Component {
 
   getUserMediaTitles(userMediaConfig){
     if(userMediaConfig.audio && !userMediaConfig.video){
-      return 'Microphone'
+      return 'microphone'
     } else if(!userMediaConfig.audio && userMediaConfig.video){
-      return 'Webcam'
+      return 'webcam'
     } else if(!userMediaConfig.audio && !userMediaConfig.video){
-      return 'Nothing'
+      return 'nothing'
     } else {
-      return 'Webcam and Microphone'
+      return 'webcam and microphone'
     }
   }
 
@@ -72,6 +72,7 @@ class RoomPage extends React.Component {
   updateUiState(newUiState, prevUiState){
     if(newUiState === prevUiState){ return }
 
+    // TODO: Refactor to React
     setTimeout(() => {
       switch(newUiState){
         case "user_media_configurator": {
@@ -88,6 +89,16 @@ class RoomPage extends React.Component {
           $('.modal').modal('hide')
           $('#modal-user-media').modal('show')
           $('#modal-user-media .alert').show()
+          break
+        }
+        case "join_error": {
+          $('.modal').modal('hide')
+          $('#modal-join-error').modal('show')
+          break
+        }
+        case "room_full": {
+          $('.modal').modal('hide')
+          $('#modal-room-full').modal('show')
           break
         }
         case "maintenance": {
@@ -122,14 +133,11 @@ class RoomPage extends React.Component {
       }
     })
 
-    rtc.on('webrtc_partial_support', () => {
-      logger.warn('webrtc only partially supported!')
-      palavaAlert('<strong>Warning:</strong> Your browser is not fully supported. See <a href="/info/how">How it Works</a> for more informations. Please update or use another browser to avoid compability issues!')
-    })
-
     rtc.on('signaling_not_reachable', () => {
       logger.error('signaling server not reachable')
-      palavaAlert('Unfortunately, the palava rtc server seems to be down! Please try again later!')
+      this.setState({
+        uiState: 'join_error'
+      })
     })
 
     rtc.on('signaling_error', (error) => {
@@ -138,16 +146,23 @@ class RoomPage extends React.Component {
 
     rtc.on('signaling_shutdown', (seconds) => {
       logger.warn("Sorry, your connection will be reset in " + seconds + " seconds!")
-      this.setState({ uiState: 'maintenance' })
+      this.setState({
+        uiState: 'maintenance'
+      })
     })
 
     rtc.on('room_join_error', () => {
       logger.error('room not joinable')
-      palavaAlert('Unfortunately, the palava rtc server seems to be down! Please try again later!') // TODO modal
+      this.setState({
+        uiState: 'join_error'
+      })
     })
 
     rtc.on('room_full', () => {
-      palavaAlert('Sorry, the conference room <strong>' + this.props.params.roomId + '</strong> is full! Please <a href="javascript:window.location.reload()">try again</a> or go back to the <a href="/#/">homepage</a>!') // TODO oo
+      logger.error('room full')
+      this.setState({
+        uiState: 'room_full'
+      })
     })
 
     rtc.on('room_joined', (room) => {
@@ -294,6 +309,8 @@ class RoomPage extends React.Component {
       <UserMediaConfiguratorModal initConferenceFn={this.initConference.bind(this)}/>
       <UserMediaHintModal userMediaTitles={this.state.userMediaTitles}/>
       <MaintenanceModal/>
+      <JoinErrorModal/>
+      <RoomFullModal/>
     </div>
   }
 }
