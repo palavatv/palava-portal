@@ -136,14 +136,35 @@ footer {
 }
 
 .support-list {
-  text-align: left;
+  text-align: center;
   background: #e0e0e0;
-  border-radius: 5px;
+  padding: 22px 30px 0;
   li {
-    line-height: 30px;
-  }
-  img {
-    margin: 7px 10px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 16px;
+    width: 33%;
+    min-width: 150px;
+    > a {
+      display: block;
+    }
+    img {
+      display: block;
+      margin: auto;
+    }
+    span {
+      display: block;
+      white-space: nowrap;
+      font-size: 16px;
+      line-height: 36px;
+    }
+    a {
+      font-weight: bold;
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 }
 

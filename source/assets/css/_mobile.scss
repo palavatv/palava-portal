@@ -86,4 +86,10 @@
       margin-left: -10px;
     }
   }
+
+  .support-list {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+  }
 }
