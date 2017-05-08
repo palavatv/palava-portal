@@ -46,11 +46,13 @@ nav {
     position: fixed;
     top: $nav-height;
     width: $stage-width;
-    height: calc(100% - #{$footer-height});
+    height: calc(100% - #{$nav-height});
     .plv-stage {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      top: 4%;
+      left: 4%;
+      width: 92%;
+      height: calc(92% - #{$footer-height});
     }
     video {
       position: absolute;
@@ -88,62 +90,81 @@ nav {
     }
   }
 
-    aside.plv-video-bar {
-        text-align: left;
-        color: $heading-color;
+  aside.plv-video-bar {
+    text-align: left;
+    color: $heading-color;
+    position: absolute;
+    top: $nav-height;
+    right: 0px;
+    min-height: calc(100% - #{$nav-height});
+    width: $video-bar-width;
+    background: $sidebar-background-color;
+    padding: 0px;
+    box-shadow: none;
+
+    .plv-participants {
+      margin: auto;
+      margin-bottom: 16px;
+      margin-top: 20px;
+    }
+
+    .plv-video-wrapper {
+      margin-top: 15px;
+      margin-bottom: 0;
+      position: relative;
+      .plv-video-volume {
+        display: inline-block;
+        overflow: hidden;
         position: absolute;
-        top: $nav-height;
-        right: 0px;
-        min-height: calc(100% - #{$nav-height});
-        width: $video-bar-width;
-        background: $sidebar-background-color;
-        padding: 0px;
-        box-shadow: none;
-
-        .plv-video-wrapper {
-            margin: auto;
-            padding-top: 15px;
-            width: 92%;
-            .plv-video-heading {
-                display: inline-block;
-                padding-bottom: 5px;
-            }
-            .plv-video-mute {
-                font-family: Symbola;
-                display: inline-block;
-                text-align: left;
-                font-size: 17px;
-                width: 26px;
-                padding-bottom: 4px;
-            }
-            .plv-video-like {
-                box-shadow: 0px 0px 4px #999;
-                margin-right: 0px;
-                width: 100%;
-                height: auto;
-                min-height: 50px;
-                background: #e7e7e7;
-                &:focus {
-                    border: 0px;
-                    outline: 0;
-                }
-            }
-            .plv-video-dummy {
-                line-height: 100px;
-                text-align: center;
-                cursor: default;
-                background: #ccc;
-            }
-            .plv-change-name{
-                padding-left: 10px;
-            }
+        cursor: default;
+        font-family: Symbola;
+        width: 1vw;
+        left: 0.8vw;
+        bottom: 1.2vw;
+        font-size: 1.4vw;
+        background: rgba(0,0,0, 0.3);
+        border-radius: 50%;
+        padding: 0.8vw 1.4vw 0.8vw 0.8vw;
+      }
+      a .plv-video-volume {
+        cursor: pointer;
+        color: black;
+      }
+      .plv-video-mute {
+        pointer-events: none;
+      }
+      // video, .plv-video-like {
+      //   margin: 0;
+      //   padding: 0;
+      // }
+      .plv-video-like {
+        box-shadow: 0px 0px 4px #999;
+        margin-right: 0px;
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        background: #e7e7e7;
+        &:focus {
+          border: 0px;
+          outline: 0;
         }
+      }
+      .plv-video-dummy {
+          line-height: 100px;
+          text-align: center;
+          cursor: default;
+          background: #ccc;
+      }
+      .plv-change-name{
+          padding-left: 10px;
+      }
+    }
 
-        .plv-active-video-wrapper {
-            .plv-video-like {
-                box-shadow: 0px 0px 4px #555;
-            }
+    .plv-active-video-wrapper {
+        .plv-video-like {
+            box-shadow: 0px 0px 4px #555;
         }
+      }
     }
 
     video::-webkit-media-controls {

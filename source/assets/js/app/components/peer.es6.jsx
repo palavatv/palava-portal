@@ -19,32 +19,26 @@ class Peer extends React.Component {
       var activeClassName = ""
     }
 
-    if(peer.hasAudio() && !peer.isLocal()){
-      if(peer.isMuted()){
-        var volumeControl = <span>🔈</span>
-      } else {
-        var volumeControl = <span>🔊</span>
-      }
-      var finalVolumeControl = <a href="javascript:void(0)" onClick={toggleMute} className="plv-video-mute">
-        { volumeControl }
-      </a>
-    } else if(!peer.hasAudio() && (!peer.isLocal() || props.noLocalAudio)){
-      var finalVolumeControl = <span className="plv-video-mute">🔇</span>
-    } else {
-      var finalVolumeControl = <span/>
-    }
-
     if(peer.isLocal()){
-      var peerNameAndOptions = <span className="plv-video-heading">
-        { peer.status.name || "You" }
-      </span>
-      // <a href className="plv-change-name" data-title="Change your Display Name" data-placement="bottom">
-      //   Options
-      // </a>
+      if(peer.hasAudio() && !props.noLocalAudio){
+        var finalVolumeControl = <div className="plv-video-volume">🔊</div>
+      } else {
+        var finalVolumeControl = <div className="plv-video-volume plv-video-mute">🔇</div>
+      }
     } else {
-      var peerNameAndOptions = <span className="plv-video-heading">
-        { peer.status.name || "Anonymous" }
-      </span>
+      if(peer.hasAudio()){
+        if(peer.isMuted()){
+          var volumeControl = <div className="plv-video-volume">🔈</div>
+        } else {
+          var volumeControl = <div className="plv-video-volume">🔊</div>
+        }
+
+        var finalVolumeControl = <a href="javascript:void(0)" onClick={toggleMute}>
+          { volumeControl }
+        </a>
+      } else {
+        var finalVolumeControl = <div className="plv-video-volume plv-video-mute">🔇</div>
+      }
     }
 
     if(peer.isReady()){
@@ -58,9 +52,8 @@ class Peer extends React.Component {
     }
 
     return <li className={ "plv-video-wrapper" + activeClassName } data-peer-id={props.id}>
-      { finalVolumeControl }
-      { peerNameAndOptions }
       { peerVideo }
+      { finalVolumeControl }
     </li>
   }
 }
