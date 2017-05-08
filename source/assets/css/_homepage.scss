@@ -1,5 +1,5 @@
 .index {
-    background: $homepage-background-color;
+  background: $homepage-background-color;
 }
 
 .github-ribbon {
@@ -15,9 +15,8 @@
       display: inline-block;
       vertical-align: middle;
       text-align: center;
-      width: 600px;
       padding: 0px;
-      margin-top: 150px;
+      margin-top: 12%;
       img:first-child {
         padding-left: 0px;
         width: 250px;
@@ -26,44 +25,41 @@
     }
 
     .join-room {
-        margin: 30px 50px 16px 91px;
-        padding-bottom: 10px;
-        padding-top: 13px;
-        input, button {
-            font-size: 20px;
-            line-height: 26px;
-            height: 100%;
+      margin-top: 42px;
+      margin-bottom: 20px;
+
+      input, button {
+        font-size: 18px;
+        border-radius: 0 !important;
+      }
+
+      .join-room-fields > * {
+        display: block;
+        margin: auto;
+
+        &.button-separator {
+          margin-top: 8px;
+          font-size: 18px;
+          line-height: 36px;
+          cursor: default;
+          color: #999;
+          a {
+            color: $link-hover-color;
+          }
         }
-        p {
-            text-align: justify;
+
+      }
+      .room-id {
+        border-right: none;
+        width: 280px;
+        background: #ddd;
+        color: $font-color;
+        &:focus {
+          border-right: 0px solid pink;
         }
-    }
-    .btn-private {
-      margin-top: -10px;
-      margin-left: 15px;
-    }
-    .button-separator {
-      margin-left: 15px;
-      font-size: 20px;
-      line-height: 36px;
-      display: inline-block;
-      position: relative; top: -2px; // ...
-      cursor: default;
+      }
     }
 
-    .room-id {
-      border-right: 0px solid pink;
-      padding-left: 7px;
-      width: 250px;
-      background: #ddd;
-      color: $font-color;
-      &:focus {
-        border-right: 0px solid pink;
-      };
-    }
-    .button-separator {
-      color: #999;
-    }
     ::-webkit-input-placeholder, ::-moz-placeholder {
       color: #999;
     }

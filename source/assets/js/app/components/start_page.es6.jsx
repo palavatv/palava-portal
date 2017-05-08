@@ -34,27 +34,30 @@ class StartPage extends React.Component {
               name="room_id"
               id="room_id"
               className="input-large room-id"
-              placeholder="Conference Name"
+              placeholder="Enter a conference name and click"
               value={this.state.roomId}
               onChange={this.handleChange}
               ref={ (input) => this.input = input }
               />
-          <button className="btn btn-primary btn-go" onClick={this.handleClick}>▸</button>
+          <button className="btn btn-primary btn-go" onClick={this.handleClick}>go</button>
         </div>
-        <span className="button-separator">or</span>
-        <button className="btn btn-warning btn-private" onClick={this.handleClickPrivate}>Private</button>
+        <div className="button-separator">
+          or start a <a href="javascript:void(0)" onClick={this.handleClickPrivate}>secret conference</a>
+        </div>
       </div>
     }
 
     return <div id="wrap">
       <div className="homepage earth">
-        <div className="content container">
+        <div className="content">
           <img src="/assets/images/palava-papagei.svg" alt="palava.tv" onClick={ () => this.input.focus() } />
           <form className="join-room" onSubmit={this.handleClick}>
             { joinRoomFieldsOrNoSupport }
           </form>
         </div>
-        <Footer/>
+        <div className="plv-mobile-footer">
+          <Footer/>
+        </div>
       </div>
       <GitHubRibbon/>
     </div>

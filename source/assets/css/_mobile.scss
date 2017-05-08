@@ -12,31 +12,6 @@
     .plv-participants {
       margin: 0 15px;
     }
-    .plv-small-footer {
-      display: block;
-      footer {
-        width: auto;
-        padding: 15px;
-        margin-bottom: 0;
-        position: static;
-        white-space: normal;
-        height: auto;
-        ul {
-          padding: 0;
-          display: block;
-          width: auto;
-          li {
-          width: 100%;
-            display: block;
-            line-height: 32px;
-            border-right: none;
-            &:not(:last-child) {
-              border-bottom: 1px solid $footer-line-color;
-            }
-          }
-        }
-      }
-    }
 
     .plv-video-wrapper {
       .plv-video-volume {
@@ -45,6 +20,34 @@
         bottom: 3.6vw;
         font-size: 4.2vw;
         padding: 2.4vw 4.2vw 2.4vw 2.4vw;
+      }
+    }
+  }
+
+  .plv-small-footer, .plv-mobile-footer {
+    display: block;
+    footer {
+      width: auto;
+      padding: 15px;
+      margin-bottom: 0;
+      position: static;
+      white-space: normal;
+      height: auto;
+      ul {
+        padding: 0;
+        display: block;
+        width: auto;
+        li {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          display: block;
+          line-height: 32px;
+          border-right: none;
+          border-bottom: 1px solid $footer-line-color;
+          &:not(:last-child) {
+          }
+        }
       }
     }
   }
@@ -60,5 +63,12 @@
     left: 0;
     top: $nav-height !important;
     margin-left: 0;
+  }
+
+  .homepage {
+    .join-room .room-id {
+      width: 82%;
+      margin-left: -10px;
+    }
   }
 }
