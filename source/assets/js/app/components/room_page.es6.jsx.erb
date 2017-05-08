@@ -284,8 +284,10 @@ class RoomPage extends React.Component {
           <ul className="nav plv-participants">
             { peerList }
           </ul>
+          <div className="plv-small-footer">
+            <Footer/>
+          </div>
         </aside>
-
       </div>
 
       <UserMediaConfiguratorModal initConferenceFn={this.initConference.bind(this)}/>

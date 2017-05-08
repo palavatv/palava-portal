@@ -13,7 +13,7 @@ class ShareLink extends React.PureComponent {
   render() {
     const props = this.props
 
-    return <p id="share-link-text" className="pull-right">
+    return <p id="share-link-text">
       <strong onClick={() => this.shareLink.focus()}>
         copy and share this link to invite people to the conference
       </strong>
