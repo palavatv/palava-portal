@@ -1,53 +1,47 @@
-#how-it-works, #contact, #feedback, #ev {
-  margin-right: 0px;
-  padding: 0px 10px;
-  p {
-    color: $font-color;
-    margin-bottom: 10px;
-  }
-  .vcard {
-    margin-bottom: 0px;
-  }
-  .float-left{
-    float: left;
+.info {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  .info-header {
+    text-align: center;
+    margin-bottom: 40px;
+    img {
+      margin: auto;
+      width: 150px;
+      height: 150px;
+    }
   }
 
-  .feedback-form {
-    // text-align: right;
-    textarea {
-      display: block;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 100%;
-      min-height: 200px;
-      background: #f9f9f9;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 10px;
+  main {
+    margin-right: 0px;
+    padding: 0px 10px;
+    max-width: 800px;
+    margin: auto;
+
+    p {
+      color: $font-color;
       margin-bottom: 10px;
-      border-radius: 0px;
+      text-align: justify;
+      font-size: 15px;
+      line-height: 25px;
     }
-    button {
-      width: 20%;
-    }
-  }
 
-  .feedback-heading {
-    border-bottom: 0px;
-  }
-
-  .activity-area {
-    h3 {
-      font-size: 14px;
-      margin: 0px;
+    .vcard {
+      margin-bottom: 0px;
     }
-    display: inline-block;
-    margin-right: 23px;
-    width: 200px;
-    vertical-align: top;
+
+    .activity-area {
+      display: inline-block;
+      margin-left: 11px;
+      margin-right: 11px;
+      width: 30%;
+      vertical-align: top;
+    }
   }
 }
 
-#ev, #how-it-works {
-  margin-top: 35px;
+#contact {
+  p, .vcard {
+    text-align: center;
+  }
 }

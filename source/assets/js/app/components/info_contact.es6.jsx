@@ -1,27 +1,32 @@
 const InfoContact = (props) => {
-  return (
-    <div className="container">
-      <div id="contact">
-        <h2>Internet</h2>
-        <p><a href="mailto:contact@palava.tv">contact@palava.tv</a> | <a href="https://twitter.com/palavatv">@palavatv</a></p>
+  return <div className="info">
+    <InfoHeader/>
 
-        <h2>Address</h2>
+    <main id="contact">
+      <h1>Contact</h1>
+      <p><a href="mailto:contact@palava.tv">contact@palava.tv</a></p>
 
-        <div className="vcard">
-          <div className="fn org">palava e.V.</div>
-          <div className="street-address">Thomas-Müntzer-Platz 5</div>
-          <div className="postal-code float-left">01307</div><span className="float-left">&nbsp;</span><div className="locality">Dresden</div>
-          <div className="country-name">Germany</div>
+      <h2>Address</h2>
+      <address className="vcard">
+        <div className="fn org">palava e. V.</div>
+        <div className="street-address">Thomas-Müntzer-Platz 5</div>
+        <div>
+          <span className="postal-code">01307</span>
+          <span className="locality">Dresden</span>
         </div>
+        <div className="country-name">Germany</div>
+      </address>
 
-        <h2>Representatives</h2>
-        <p>Marius Melzer / Jan Lelis / Alexandra Weiss</p>
+      <h2>Registration</h2>
+      <p>VR 5967 (Amtsgericht Dresden)</p>
 
-        <h2>Registration</h2>
-        <p>Amtsgericht Dresden / VR 5967</p>
-      </div>
+      <h2>Representatives</h2>
+      <p>Marius Melzer, Jan Lelis, Alexandra Weiss</p>
+    </main>
 
+    <div className="plv-mobile-footer">
       <Footer/>
     </div>
-  )
+    <GitHubRibbon/>
+  </div>
 }

@@ -8,24 +8,15 @@ body {
   background: $main-background-color;
 }
 
-h1 {
-  font-size: 18px;
-  line-height: 23px;
-  margin-top: 15px;
-  border-bottom: 1px solid #777;
-  color: $logo-color;
-  a { color: $logo-color; }
-}
-
-h2 {
-  font-size: 15px;
-  line-height: 19px;
-  border-bottom: 1px solid #777;
+h1, h2 {
+  text-align: center;
+  font-size: 17px;
+  line-height: 26px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
-h2, h3 {
+h1, h2, h3 {
   color: $heading-color;
   a { color: $heading-color; }
 }
@@ -50,26 +41,6 @@ a {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-}
-
-.popover {
-  width: 280px;
-  max-width: 280px;
-  line-height: 30px;
-  z-index: 2000;
-  .popover-title{
-    font-weight: bold;
-  }
-  .popover-content {
-    margin-top: 2px;
-    height: 33px;
-  }
-  input {
-    border-right: 0px solid pink;
-    &:focus {
-      border-right: 0px solid pink;
-    };
-  }
 }
 
 nav {
@@ -184,7 +155,7 @@ footer {
   cursor: default;
 }
 
-input, textarea {
+input {
   &:focus {
     border: solid 1px rgba(0, 0, 0, 0.175);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 127, 255, 0.1);
