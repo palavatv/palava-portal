@@ -9,6 +9,11 @@
   border: 0;
 }
 
+.palava-logo {
+  width: 250px;
+  height: 250px;
+}
+
  .homepage {
     text-align: center;
     .content {
@@ -17,11 +22,6 @@
       text-align: center;
       padding: 0px;
       margin-top: 12%;
-      img:first-child {
-        padding-left: 0px;
-        width: 250px;
-        height: 250px;
-      }
     }
 
     .join-room {

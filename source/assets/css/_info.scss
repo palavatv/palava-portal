@@ -11,32 +11,32 @@
       height: 150px;
     }
   }
+}
 
-  main {
-    margin-right: 0px;
-    padding: 0px 10px;
-    max-width: 800px;
-    margin: auto;
+main {
+  margin-right: 0px;
+  padding: 0px 10px;
+  max-width: 800px;
+  margin: auto;
 
-    p {
-      color: $font-color;
-      margin-bottom: 10px;
-      text-align: justify;
-      font-size: 15px;
-      line-height: 25px;
-    }
+  p {
+    color: $font-color;
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 25px;
+  }
 
-    .vcard {
-      margin-bottom: 0px;
-    }
+  .vcard {
+    margin-bottom: 0px;
+  }
 
-    .activity-area {
-      display: inline-block;
-      margin-left: 11px;
-      margin-right: 11px;
-      width: 30%;
-      vertical-align: top;
-    }
+  .activity-area {
+    display: inline-block;
+    margin-left: 11px;
+    margin-right: 11px;
+    width: 30%;
+    vertical-align: top;
   }
 }
 

@@ -11,8 +11,9 @@ class StartPage extends React.Component {
   }
 
   componentWillMount() {
-    if( this.props.params.supported === '0' ||
-        this.props.params.supported === undefined && palava.browser.checkForWebrtcError() ){
+    var forceSupport = new URLSearchParams(window.location.search).get('supported')
+    if( forceSupport === "0" ||
+        forceSupport === undefined && palava.browser.checkForWebrtcError() ){
       this.setState({
         noSupport: true
       })
@@ -21,10 +22,10 @@ class StartPage extends React.Component {
 
   render() {
     if(this.state.noSupport){
-      var joinRoomFieldsOrNoSupport = <div className="hide nosupport">
+      var joinRoomFieldsOrNoSupport = <main className="nosupport">
         <p><strong>Sorry!</strong> Your web browser is not compatible with the latest technologies for video communication on the web. In order to use <a href="/info/how">palava</a>, you will need to install a web browser that supports WebRTC:</p>
         <SupportList/>
-      </div>
+      </main>
     } else {
       var joinRoomFieldsOrNoSupport = <div className="join-room-fields">
         <div className="input-append">
@@ -47,18 +48,21 @@ class StartPage extends React.Component {
       </div>
     }
 
-    return <div id="wrap">
-      <div className="homepage earth">
-        <div className="content">
-          <img src="/assets/images/palava-papagei.svg" alt="palava.tv" onClick={ () => this.input.focus() } />
-          <form className="join-room" onSubmit={this.handleClick}>
-            { joinRoomFieldsOrNoSupport }
-          </form>
-        </div>
-        <div className="plv-mobile-footer">
-          <Footer/>
-        </div>
+    return <div className="homepage earth">
+      <div className="content">
+        <img src="/assets/images/palava-papagei.svg"
+            alt="palava.tv"
+            className="palava-logo"
+            onClick={ () => this.input && this.input.focus() }
+            />
+        <form className="join-room" onSubmit={this.handleClick}>
+          { joinRoomFieldsOrNoSupport }
+        </form>
       </div>
+      <div className="plv-mobile-footer">
+        <Footer/>
+      </div>
+
       <GitHubRibbon/>
     </div>
   }

@@ -127,7 +127,7 @@ class RoomPage extends React.Component {
     })
 
     rtc.on('webrtc_no_support', () => {
-      if(this.props.params.supported !== '1'){
+      if(new URLSearchParams(window.location.search).get('supported') !== "1"){
         logger.error('webrtc not supported')
         goHome()
       }
@@ -225,8 +225,8 @@ class RoomPage extends React.Component {
 
 
   componentDidMount() {
-    if(this.props.params.supported === '0'){
-      goHome()
+    if(new URLSearchParams(window.location.search).get('supported') === "0"){
+      goHome("?supported=0")
     } else if(this.props.params.roomId.length > 50){
       window.location.replace(this.props.params.roomId.substr(0,50))
     } else {
