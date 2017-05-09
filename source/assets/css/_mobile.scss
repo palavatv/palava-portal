@@ -81,9 +81,19 @@
   }
 
   .homepage {
-    .join-room .room-id {
-      width: 82%;
-      margin-left: -10px;
+    .content {
+      margin-top: 10vh;
+    }
+    .join-room {
+      input, button {
+        font-size: 18px;
+        line-height: 32px;
+      }
+      input.room-id {
+        width: 100%;
+        max-width: calc(100% - 10px);
+        margin-left: -25px;
+      }
     }
   }
 

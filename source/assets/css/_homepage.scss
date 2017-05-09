@@ -27,8 +27,31 @@
       margin-bottom: 20px;
 
       input, button {
-        font-size: 18px;
+        font-size: 24px;
+        line-height: 40px;
+        height: auto;
         border-radius: 0 !important;
+
+        &.room-id {
+          border: 1px solid #bbb;
+          border-right: none;
+          width: 82vw;
+          max-width: 380px;
+          padding: 4px 8px;
+          background: #ddd;
+          color: $font-color;
+          &:focus, &:active {
+            border-right: none;
+            box-shadow: inherit;
+          }
+        }
+
+        &.btn-go {
+          &:focus, &:active {
+            outline: none;
+            background: #2C5AA0;
+          }
+        }
       }
 
       .join-room-fields > * {
@@ -44,16 +67,6 @@
           a {
             color: $link-hover-color;
           }
-        }
-
-      }
-      .room-id {
-        border-right: none;
-        width: 280px;
-        background: #ddd;
-        color: $font-color;
-        &:focus {
-          border-right: 0px solid pink;
         }
       }
     }
