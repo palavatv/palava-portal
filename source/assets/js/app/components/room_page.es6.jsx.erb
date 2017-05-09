@@ -78,6 +78,7 @@ class RoomPage extends React.Component {
         case "user_media_configurator": {
           $('.modal').modal('hide')
           $('#modal-user-media-configurator').modal('show')
+          $('#modal-user-media-configurator button:first').focus()
           break
         }
         case "waiting_for_user_media": {

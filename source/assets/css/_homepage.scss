@@ -45,13 +45,6 @@
             box-shadow: inherit;
           }
         }
-
-        &.btn-go {
-          &:focus, &:active {
-            outline: none;
-            background: #2C5AA0;
-          }
-        }
       }
 
       .join-room-fields > * {

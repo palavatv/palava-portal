@@ -110,19 +110,24 @@ footer {
   }
 }
 
-.btn-primary, .btn-primary:hover {
+// TODO redo buttons without bootstrap
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  border-radius: 0 !important;
+  outline: none;
   background: #2C5AA0;
 }
 
-#modal-user-media {
-  h3 {
-    a {
-      color: $link-color;
-      &:hover {
-        color: $link-hover-color;
-      }
-    }
-  }
+.btn-info,
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+  border-radius: 0 !important;
+  outline: none;
+  background: #2f96b4;
 }
 
 .noscript-hint {

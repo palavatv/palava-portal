@@ -192,20 +192,21 @@ nav {
     }
 }
 
-ul.user-media-buttons {
-    margin: 0px;
-    li {
-        list-style: none;
-        margin: 0px auto;
-        margin-bottom: 5px;
-    }
-    button {
-        width: 200px;
-    }
-    #user-media-video-audio:focus {
-        background: #2C5AA0;
-        outline: 0;
-    }
+.user-media-buttons {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  li {
+      list-style: none;
+      margin: 0px auto;
+      margin-top: 14px;
+  }
+  button {
+    font-size: 16px;
+    line-height: 32px;
+    height: auto;
+    width: 100%;
+  }
 }
 
 #palava-alert {
