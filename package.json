@@ -1,0 +1,30 @@
+{
+  "name": "palava-portal",
+  "version": "2.0.0",
+  "description": "The web front-end of palava.tv",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palavatv/palava-portal.git"
+  },
+  "keywords": [
+    "palava",
+    "webrtc"
+  ],
+  "author": "palava e. V.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/palavatv/palava-portal/issues"
+  },
+  "homepage": "https://github.com/palavatv/palava-portal",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^3.0.5",
+    "url-search-params-polyfill": "^1.2.0",
+    "wolfy87-eventemitter": "^5.1.0"
+  }
+}

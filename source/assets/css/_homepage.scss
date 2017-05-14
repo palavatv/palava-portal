@@ -1,60 +1,73 @@
 .index {
-    background: $homepage-background-color;
+  background: $homepage-background-color;
+}
+
+.github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.palava-logo {
+  width: 250px;
+  height: 250px;
 }
 
  .homepage {
     text-align: center;
     .content {
       display: inline-block;
-      vertical-align: middle;
       text-align: center;
-      width: 600px;
-      padding: 0px;
-      margin-top: 150px;
-      img:first-child {
-        padding-left: 0px;
-      }
+      margin-top: 20vh;
     }
 
     .join-room {
-        margin: 30px 50px 16px 91px;
-        padding-bottom: 10px;
-        padding-top: 13px;
-        input, button {
-            font-size: 20px;
-            line-height: 26px;
-            height: 100%;
+      margin-top: 52px;
+      margin-bottom: 20px;
+
+      input, button {
+        font-size: 19px;
+        line-height: 30px;
+        height: auto;
+        border-radius: 0 !important;
+
+        &.room-id {
+          border-radius: 3px 0 0 3px !important;
+          border: 1px solid #bbb;
+          border-right: none;
+          width: 82vw;
+          max-width: 350px;
+          padding: 4px 8px;
+          background: #fff;
+          color: $font-color;
+          &:focus, &:active {
+            border-right: none;
+            box-shadow: inherit;
+          }
         }
-        p {
-            text-align: justify;
+      }
+      button {
+        border-radius: 0 3px 3px 0 !important;
+      }
+
+      .join-room-fields > * {
+        display: block;
+        margin: auto;
+
+        &.button-separator {
+          margin-top: 8px;
+          font-size: 18px;
+          line-height: 36px;
+          cursor: default;
+          color: #999;
+          a {
+            color: $link-hover-color;
+          }
         }
-    }
-    .btn-private {
-      margin-top: -10px;
-      margin-left: 15px;
-    }
-    .button-separator {
-      margin-left: 15px;
-      font-size: 20px;
-      line-height: 36px;
-      display: inline-block;
-      position: relative; top: -2px; // ...
-      cursor: default;
+      }
     }
 
-    .room-id {
-      border-right: 0px solid pink;
-      padding-left: 7px;
-      width: 250px;
-      background: #ddd;
-      color: $font-color;
-      &:focus {
-        border-right: 0px solid pink;
-      };
-    }
-    .button-separator {
-      color: #999;
-    }
     ::-webkit-input-placeholder, ::-moz-placeholder {
       color: #999;
     }

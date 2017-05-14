@@ -1,0 +1,108 @@
+@media only screen and (max-width: 900px) {
+  main {
+    max-width: 550px;
+    .activity-area {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    max-width: 92%;
+  }
+
+  .plv-stage-container {
+    display: none;
+  }
+
+  .navbar-fixed-top {
+    position: absolute;
+  }
+
+  .plv-video-bar {
+    width: 100%;
+
+    .plv-video-wrapper {
+      .plv-video-volume {
+        width: 3vw;
+        left: 2.4vw;
+        bottom: 3.6vw;
+        font-size: 4.2vw;
+        padding: 2.4vw 4.2vw 2.4vw 2.4vw;
+      }
+    }
+  }
+
+  .plv-small-footer, .plv-mobile-footer {
+    display: block;
+    footer {
+      width: auto;
+      padding: 15px;
+      margin-bottom: 0;
+      position: static;
+      white-space: normal;
+      height: auto;
+      ul {
+        padding: 0;
+        display: block;
+        width: auto;
+        li {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          display: block;
+          line-height: 32px;
+          border-right: none;
+          border-bottom: 1px solid $footer-line-color;
+          &:not(:last-child) {
+          }
+        }
+      }
+    }
+  }
+
+  #share-link-text {
+    strong {
+      display: none;
+    }
+  }
+
+  .modal {
+    width: 100%;
+    left: 0;
+    top: $nav-height !important;
+    margin-left: 0;
+  }
+
+  .homepage {
+    .content {
+      margin-top: 10vh;
+    }
+    .join-room {
+      input, button {
+        font-size: 18px;
+        line-height: 32px;
+      }
+      input.room-id {
+        width: 100%;
+        max-width: calc(100% - 10px);
+        margin-left: -25px;
+      }
+    }
+  }
+
+  .user-media-buttons {
+    button {
+      width: 100%;
+    }
+  }
+
+  .support-list {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+  }
+}

@@ -1,8 +1,11 @@
-//= require      angular/angular
-//= require      bootstrap/docs/assets/js/bootstrap
-//= require      angular-strap/dist/angular-strap
-//= require_tree ./lib
-//= require_tree ./app
-//= require      ./_ready
+//= require       react/dist/react
+//= require       react-dom/dist/react-dom
+//= require       react-router/umd/ReactRouter
+//= require       jquery/dist/jquery
+//= require       url-search-params-polyfill/index
+//= require       vendor/bootstrap-modal
 
-// TODO proper loading (no detailed paths) works with MM but not via rails...
+//= require_tree  ./lib
+//= require_tree  ./app/components
+//= require       ./app/misc
+//= require       ./app/main

@@ -3,21 +3,47 @@ layout: false
 ---
 
 <!doctype html>
-<html lang="en" ng-app="palava-portal">
+<html lang="en">
   <head>
-    <title ng-bind="title">palava.tv</title>
+    <title>palava.tv</title>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="palava, webrtc, video, chat, conference">
-    <meta name="description" content="palava enables video communication with your friends and colleagues from within your web browser! No registration is required and you don't need to install any browser plugins!">
+    <meta name="keywords" content="palava, webrtc, video, chat, conference, skype-alternative">
+    <meta name="description" content="palava is simplistic video communication with your friends and colleagues from within your web browser. No registration or browser plugin required.">
     <%= stylesheet_link_tag "all" %>
-    <%= javascript_include_tag "jquery","palava", "all" %>
+    <%= javascript_include_tag "palava","all" %>
+    <link rel="icon" type="image/png" href="/assets/images/palava-favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/images/palava-favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/images/palava-favicon-96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/assets/images/palava-favicon-120.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/palava-favicon-180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/palava-favicon-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/palava-favicon-167.png">
   </head>
 
-  <body class="<%= page_classes %>" ng-controller="ApplicationController">
-    <div ng-view id="view" class="view">
-      <%= partial '/html/noscript' %>
+  <body>
+    <div id="app">
+      <main class="homepage earth">
+        <div class="content">
+          <img src="/assets/images/palava-papagei.svg"
+              alt="palava.tv"
+              class="palava-logo"
+              />
+          <div class="noscript-hint" id="noscript-hint">
+            <p>
+              <strong>palava is a <a href="https://en.wikipedia.org/wiki/WebRTC">WebRTC</a> based video communication platform</strong>
+            </p>
+            <p>
+              This page does not work, because your web browser has JavaScript deactivated.<br/>
+              You'll need to activate JavaScript to be able to use palava
+            </p>
+          </div>
+        </div>
+      </main>
+      <script type="text/javascript">
+        document.getElementById('noscript-hint').style.display = 'none';
+      </script>
     </div>
   </body>
 </html>

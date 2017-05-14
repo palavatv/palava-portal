@@ -22,6 +22,7 @@ nav {
     margin-right: 15px;
     line-height: normal;
     margin-top: 12px;
+    float: right;
     strong {
       margin-right: 20px;
       font-weight: normal;
@@ -38,124 +39,136 @@ nav {
   }
 }
 
-#conference {
-    padding-right: 0px;
-    padding-top: $nav-height;
+.conference {
+  padding-right: 0px;
+  padding-top: $nav-height;
 
-    .plv-stage-container {
-        position: fixed;
-        width: $stage-width;
-        top: $nav-height;
-        bottom: $footer-height+30px;
-    }
-
-    #plv-stage-placeholder {
-        border: 1px solid $footer-line-color;
-        margin-top: 10%;
-        margin-left: 20%;
-        padding: 7px 12px 0px;
-        display: inline-block;
-        background: $footer-background-color;
-        li {
-            list-style: none;
-            line-height: 20px;
-            text-indent: -13px;
-            &:before {
-                content: '-';
-                position: relative;
-                left: -10px;
-            }
-        }
-    }
-
+  .plv-stage-container {
+    position: fixed;
+    top: $nav-height;
+    width: $stage-width;
+    height: calc(100% - #{$nav-height});
     .plv-stage {
-        video {
-            position: absolute;
-            min-width: 100%;
-            min-height: 100%;
-            max-width: 100%;
-            max-height: 100%;
-            margin-left: 10px;
-            // TODO
-            //box-shadow: 0px 0px 2px #aaa;
-        }
+      position: absolute;
+      top: 4%;
+      left: 4%;
+      width: 92%;
+      height: calc(92% - #{$footer-height});
     }
-
-    .plv-video-bar {
-        text-align: left;
-        color: $heading-color;
-        position: absolute;
-        width: $video-bar-width;
-        top: $nav-height - 1;
-        right: 0px;
-        bottom: 0px;
-        .plv-video-wrapper {
-            margin: 0px;
-            padding-bottom: 0px;
-            padding-top: 15px;
-            width: 95%;
-            .plv-video-heading {
-                display: inline-block;
-                padding-bottom: 5px;
-            }
-            .plv-video-mute {
-                font-family: Symbola;
-                display: inline-block;
-                text-align: left;
-                font-size: 17px;
-                width: 26px;
-                padding-bottom: 4px;
-            }
-            .plv-video-like {
-                box-shadow: 0px 0px 4px #999;
-                margin-right: 0px;
-                width: 100%;
-                height: auto;
-                min-height: 50px;
-                background: #e7e7e7;
-                &:focus {
-                    border: 0px;
-                    outline: 0;
-                }
-            }
-            .plv-video-dummy {
-                line-height: 100px;
-                text-align: center;
-                cursor: default;
-                background: #ccc;
-            }
-            .plv-change-name{
-                padding-left: 10px;
-            }
-        }
-
-        .plv-participants {
-            padding-bottom: $footer-height;
-            margin-left: 10px;
-        }
-
-        .plv-active-video-wrapper {
-            .plv-video-like {
-                box-shadow: 0px 0px 4px #555;
-            }
-        }
-
-        .plv-change-name {
-            cursor: pointer;
-        }
-
-        aside.well {
-            padding: 0px;
-            height: 100%;
-            border: 0px solid black;
-            box-shadow: none;
-            background: $main-background-color;
-        }
+    video {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: 100%;
+      max-height: 100%;
     }
+  }
 
-    video::-webkit-media-controls {
-        display: none !important;
+  #plv-stage-placeholder {
+    border: 1px solid $footer-line-color;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 7px 12px 0px;
+    display: inline-block;
+    background: $footer-background-color;
+    li {
+      list-style: none;
+      line-height: 20px;
+      text-indent: -13px;
+      &:before {
+        content: '-';
+        position: relative;
+        left: -10px;
+      }
     }
+  }
+
+  footer {
+    text-align: left;
+    ul {
+      width: $stage-width;
+    }
+  }
+}
+
+.plv-video-bar {
+  text-align: left;
+  color: $heading-color;
+  position: absolute;
+  top: $nav-height;
+  right: 0px;
+  min-height: calc(100% - #{$nav-height});
+  width: $video-bar-width;
+  background: $sidebar-background-color;
+  padding: 0px;
+  box-shadow: none;
+
+  .plv-participants {
+    margin: 15px;
+    margin-bottom: 10px;
+  }
+
+  .plv-video-wrapper {
+    margin-top: 12px;
+    position: relative;
+    .plv-video-volume {
+      display: inline-block;
+      overflow: hidden;
+      position: absolute;
+      cursor: default;
+      font-family: Symbola;
+      width: 1vw;
+      left: 0.8vw;
+      bottom: 1.2vw;
+      font-size: 1.4vw;
+      padding: 0.8vw 1.4vw 0.8vw 0.8vw;
+      background: rgba(0,0,0, 0.3);
+      border-radius: 50%;
+    }
+    a .plv-video-volume {
+      cursor: pointer;
+      color: black;
+    }
+    .plv-video-mute {
+      pointer-events: none;
+    }
+    .plv-video-like {
+      box-shadow: 0px 0px 4px #999;
+      margin-right: 0px;
+      width: 100%;
+      height: auto;
+      min-height: 50px;
+      background: #e7e7e7;
+      &:focus {
+        border: 0px;
+        outline: 0;
+      }
+    }
+    .plv-video-dummy {
+        line-height: 100px;
+        text-align: center;
+        cursor: default;
+        background: #ccc;
+    }
+    .plv-change-name{
+        padding-left: 10px;
+    }
+  }
+
+  .plv-active-video-wrapper {
+    .plv-video-like {
+        box-shadow: 0px 0px 4px #555;
+    }
+  }
+
+  video::-webkit-media-controls {
+      display: none !important;
+  }
+}
+
+.plv-small-footer {
+  display: none;
 }
 
 .modal-center{
@@ -177,20 +190,21 @@ nav {
     }
 }
 
-ul.user-media-buttons {
-    margin: 0px;
-    li {
-        list-style: none;
-        margin: 0px auto;
-        margin-bottom: 5px;
-    }
-    button {
-        width: 200px;
-    }
-    #user-media-video-audio:focus {
-        background: #2C5AA0;
-        outline: 0;
-    }
+.user-media-buttons {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  li {
+      list-style: none;
+      margin: 0px auto;
+      margin-top: 16px;
+  }
+  button {
+    font-size: 17px;
+    line-height: 42px;
+    height: auto;
+    width: 80%;
+  }
 }
 
 #palava-alert {
