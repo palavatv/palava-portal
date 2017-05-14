@@ -105,14 +105,12 @@ nav {
   box-shadow: none;
 
   .plv-participants {
-    margin: auto;
-    margin-bottom: 16px;
-    margin-top: 20px;
+    margin: 15px;
+    margin-bottom: 10px;
   }
 
   .plv-video-wrapper {
-    margin-top: 15px;
-    margin-bottom: 0;
+    margin-top: 12px;
     position: relative;
     .plv-video-volume {
       display: inline-block;
@@ -199,13 +197,13 @@ nav {
   li {
       list-style: none;
       margin: 0px auto;
-      margin-top: 14px;
+      margin-top: 16px;
   }
   button {
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 17px;
+    line-height: 42px;
     height: auto;
-    width: 100%;
+    width: 80%;
   }
 }
 

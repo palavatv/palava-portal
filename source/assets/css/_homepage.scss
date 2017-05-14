@@ -23,28 +23,32 @@
     }
 
     .join-room {
-      margin-top: 42px;
+      margin-top: 52px;
       margin-bottom: 20px;
 
       input, button {
-        font-size: 24px;
-        line-height: 40px;
+        font-size: 19px;
+        line-height: 30px;
         height: auto;
         border-radius: 0 !important;
 
         &.room-id {
+          border-radius: 3px 0 0 3px !important;
           border: 1px solid #bbb;
           border-right: none;
           width: 82vw;
-          max-width: 380px;
+          max-width: 350px;
           padding: 4px 8px;
-          background: #ddd;
+          background: #fff;
           color: $font-color;
           &:focus, &:active {
             border-right: none;
             box-shadow: inherit;
           }
         }
+      }
+      button {
+        border-radius: 0 3px 3px 0 !important;
       }
 
       .join-room-fields > * {

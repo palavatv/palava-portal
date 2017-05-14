@@ -79,6 +79,7 @@ footer {
     font-size: 14px;
     background-color: $footer-background-color;
     border: 1px solid $footer-line-color;
+    border-radius: 3px 3px 0 0;
     border-bottom: none;
     margin: auto;
     list-style: none;
@@ -104,7 +105,7 @@ footer {
 
 .modal {
   background: $main-background-color;
-  border-radius: 0px;
+  border-radius: 5px;
   .modal-header {
     border-bottom: 1px solid $line-color;
   }
@@ -116,7 +117,7 @@ footer {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  border-radius: 0 !important;
+  border-radius: 3px !important;
   outline: none;
   background: #2C5AA0;
 }
@@ -125,7 +126,7 @@ footer {
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active {
-  border-radius: 0 !important;
+  border-radius: 3px !important;
   outline: none;
   background: #2f96b4;
 }
