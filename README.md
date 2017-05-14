@@ -1,17 +1,12 @@
-# palava.tv
+# palava | portal
 
-palava.tv is simplistic video communication with your friends and colleagues from within your web browser. No registration or browser plugin required.
+[palava.tv](https://palava.tv) is simplistic video communication with your friends and colleagues from within your web browser. It is build on top of the [WebRTC](https://webrtc.org/) technology. No registration or browser plugin required.
 
-# palava.tv | Portal
+Please see the [palava repository](https://github.com/palavatv/palava) for an overview of palava and report issues there.
 
-The palava portal is the single-page web application which runs [palava.tv](https://palava.tv). It is built using the following technologies:
+The palava portal is the single-page web application which runs palava. It is built using the [palava client](https://github.com/palavatv/palava-client), the [React](https://facebook.github.io/react/) JavaScript library, and compiled for the web by [Middleman](http://middlemanapp.com/).
 
-- [palava-client](https://github.com/palavatv/palava-client)
-- [React](https://facebook.github.io/react/)
-- [Middleman](http://middlemanapp.com/)
-- [Twitter Bootstrap](http://getbootstrap.com/)
-
-### Setup
+## Setup
 
 Clone this directory and checkout the submodule:
 
@@ -44,7 +39,7 @@ You can build a static version of the page using:
 
     $ middleman build
 
-#### Configure using Environment Variables
+### Configure using Environment Variables
 
 You can set the addresses of the rtc and stun server via environment variables. The defaults are a local rtc server 'ws:localhost:4233' and the palava stun server 'stun:stun.palava.tv'. Use `ws:` for unsecured and `wss:` for ssl secured websocket connections.
 
@@ -53,21 +48,18 @@ You can set the addresses of the rtc and stun server via environment variables. 
     $ export PALAVA_BASE_ADDRESS="https://your.domain.com"
     $ middleman
 
-##### Defaults
+#### Defaults
 
     PALAVA_BASE_ADDRESS="localhost:4567"
     PALAVA_STUN_ADDRESS="stun:stun.palava.tv"
     PALAVA_RTC_ADDRESS="ws:localhost:4233"
 
-##### Use with palava.tv
+#### Use with palava.tv
 
     PALAVA_BASE_ADDRESS="palava.tv"
     PALAVA_STUN_ADDRESS="stun:stun.palava.tv"
     PALAVA_RTC_ADDRESS="wss:machine.palava.tv"
 
-## Issues
-
-Please report issues to the [palava main repository](https://github.com/palavatv/palava/issues).
 
 ## Credits
 
