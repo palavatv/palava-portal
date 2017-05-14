@@ -1,7 +1,4 @@
-//= require       react/dist/react
-//= require       react-dom/dist/react-dom
 //= require       react-router/umd/ReactRouter
-//= require       jquery/dist/jquery
 //= require       url-search-params-polyfill/index
 //= require       vendor/bootstrap-modal
 

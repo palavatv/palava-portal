@@ -26,7 +26,14 @@ configure :build do
   activate :minify_css
   # activate :asset_hash
   activate(:minify_javascript,
-      ignore: ['assets/js/app', 'node_modules', 'assets/js/lib', 'assets/js/palava'],
+      ignore: [
+        'assets/js/app',
+        'node_modules',
+        'assets/js/lib',
+        'assets/js/palava',
+        'assets/js/react',
+        'assets/js/jquery',
+      ],
       compressor: Uglifier.new(JSON(
         File.read(File.dirname(__FILE__) + '/source/assets/js/palava/uglifier_options.json')
       )),
