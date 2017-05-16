@@ -73,8 +73,11 @@
   .modal {
     width: 100%;
     left: 0;
-    top: $nav-height !important;
+    top: 0 !important;
+    border-radius: 0 !important;
     margin-left: 0;
+    overflow-y: auto;
+    max-height: 100%;
   }
 
   .homepage {
