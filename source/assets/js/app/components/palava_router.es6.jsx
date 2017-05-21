@@ -31,7 +31,7 @@ class PalavaRouter extends React.PureComponent {
           />
       <ReactRouter.Route path="*"
           component={NoPage}
-          onEnter={goHome}
+          onEnter={() => goHome()}
           />
     </ReactRouter.Router>
   }
