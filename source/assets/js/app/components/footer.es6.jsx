@@ -6,6 +6,7 @@ const Footer = (props) => {
       <li><a href="https://blog.palava.tv">Blog</a></li>
       <li><a href="https://github.com/palavatv/palava">Code</a></li>
       <li><Link to="/info/ev">palava e. V.</Link></li>
+      <li><Link to="/info/privacy">Privacy Policy</Link></li>
       <li><Link to="/info/contact">Imprint</Link></li>
     </ul>
   </footer>

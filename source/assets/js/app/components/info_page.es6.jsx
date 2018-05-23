@@ -1,6 +1,6 @@
 const InfoPage = (props) => {
   const infoPage = props.params.infoPage
-  if(["ev", "contact", "how"].indexOf(infoPage) == -1){
+  if(["ev", "contact", "how", "privacy"].indexOf(infoPage) == -1){
     setTimeout( () => {
       ReactRouter.browserHistory.replace("/info/how")
     } )
