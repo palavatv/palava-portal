@@ -130,7 +130,7 @@ DEPENDENCIES
   middleman-sprockets (~> 4.0)
   oj
   rack-rewrite
-  rb-inotify (~> 0.9.2)
+  rb-fsevent
   react-jsx-sprockets
   sass
   sprockets-es6
@@ -139,4 +139,4 @@ DEPENDENCIES
   whiskey_disk
 
 BUNDLED WITH
-   1.16.1
+   1.17.3
