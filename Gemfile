@@ -11,4 +11,3 @@ gem 'rb-fsevent' if RUBY_PLATFORM.downcase.include?("darwin")
 gem 'therubyracer'
 gem 'oj'
 gem 'rack-rewrite'
-gem 'whiskey_disk'

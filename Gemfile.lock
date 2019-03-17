@@ -88,7 +88,6 @@ GEM
     public_suffix (3.0.3)
     rack (2.0.5)
     rack-rewrite (1.5.1)
-    rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -118,8 +117,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    whiskey_disk (0.6.24)
-      rake
     yajl-ruby (1.4.1)
 
 PLATFORMS
@@ -136,7 +133,6 @@ DEPENDENCIES
   sprockets-es6
   therubyracer
   uglifier
-  whiskey_disk
 
 BUNDLED WITH
    1.17.3
