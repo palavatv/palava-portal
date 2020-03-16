@@ -72,3 +72,11 @@
       color: #999;
     }
 }
+
+.remarks {
+  padding-top: 3em;
+  max-width: 92%;
+  @media (min-width: 601px) {
+    max-width: 70%;
+  }
+}

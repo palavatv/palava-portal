@@ -45,6 +45,11 @@ class StartPage extends React.Component {
         <div className="button-separator">
           or start a <a href="javascript:void(0)" onClick={this.handleClickPrivate}>secret conference</a>
         </div>
+        <div className="remarks">
+          <strong>Please note that establishing a connection to someone only works in ~85% of all connection cases</strong>
+          <br/><br/>
+          The reason a connection can fail is due to the router or firewall setup of one of the participants. We are working on a version of palava which will show you an error message when the connection could not be established.
+        </div>
       </div>
     }
 
