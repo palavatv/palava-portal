@@ -61,8 +61,9 @@ You can set the addresses of the rtc and stun server via environment variables. 
 
 MIT License. Part of the [palava project](https://palava.tv).
 
-    Copyright (C) 2013 Jan Lelis          mail@janlelis.de
+    Copyright (C) 2014-2020 palava e. V.  contact@palava.tv
+
+    Copyright (C) 2013 Jan Lelis          hi@ruby.consulting
     Copyright (C) 2013 Marius Melzer      marius@rasumi.net
-    Copyright (C) 2013 Stephan Thamm      thammi@chaossource.net
+    Copyright (C) 2013 Stephan Thamm      stephan@innovailable.eu
     Copyright (C) 2013 Kilian Ulbrich     kilian@innovailable.eu
-    Copyright (C) 2014-2017 palava e. V.  contact@palava.tv
