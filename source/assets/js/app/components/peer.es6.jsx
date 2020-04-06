@@ -41,14 +41,16 @@ class Peer extends React.Component {
       }
     }
 
-    if(peer.isReady()){
+    if(peer.error) {
+      var peerVideo = <div className="plv-video-like">Error / Disconnected</div>
+    } else if(!peer.isReady()){
+      var peerVideo = <div className="plv-video-like"></div>
+    } else {
       var peerVideo = <WebrtcVideo
           peer={peer}
           isMuted={peer.isMuted()}
           clickFn={() => props.setPeerOnStageFn(peer)}
           />
-    } else {
-      var peerVideo = <div className="plv-video-like"></div>
     }
 
     return <li className={ "plv-video-wrapper" + activeClassName } data-peer-id={props.id}>
