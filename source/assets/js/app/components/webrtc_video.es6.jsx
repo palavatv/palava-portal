@@ -5,15 +5,15 @@ class WebrtcVideo extends React.Component {
 
   attachPeerStream(){
     if(this.props.peer.getStream()){
-      palava.browser.attachMediaStream($(this.video), this.props.peer.getStream())
+      palava.browser.attachMediaStream(this.video, this.props.peer.getStream())
     }
   }
 
   componentDidMount(){
-    palava.browser.registerFullscreen($(this.video), 'dblclick')
+    palava.browser.registerFullscreen(this.video, 'dblclick')
 
     if(this.props.isMuted){
-      $(this.video).attr('muted', '') // react / jsx workaround
+      this.video.setAttribute('muted', '') // react / jsx workaround
     }
 
     if(this.props.peer.isReady){
@@ -29,7 +29,7 @@ class WebrtcVideo extends React.Component {
     }
 
     if(this.props.isMuted){
-      $(this.video).attr('muted', '') // react / jsx workaround
+      this.video.setAttribute('muted', '') // react / jsx workaround
     }
   }
 
