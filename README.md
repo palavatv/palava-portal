@@ -2,9 +2,13 @@
 
 [palava.tv](https://palava.tv) is simplistic video communication with your friends and colleagues from within your web browser. It is build on top of the [WebRTC](https://webrtc.org/) technology. No registration or browser plugin required.
 
-Please see the [palava repository](https://github.com/palavatv/palava) for an overview of palava and report issues there.
+See [palavatv/palava](https://github.com/palavatv/palava) for an overview of all parts of palava.tv.
 
 The palava portal is the single-page web application which runs palava. It is built using the [palava client](https://github.com/palavatv/palava-client), the [React](https://facebook.github.io/react/) JavaScript library, and compiled for the web by [Middleman](http://middlemanapp.com/).
+
+**This application is not part of the palava.tv stack, anymore**
+
+It was replaced by [palavatv/palava-web](https://github.com/palavatv/palava-web).
 
 ## Setup
 
